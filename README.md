@@ -6,15 +6,18 @@ You should be able to find the location of every public library in Australia ter
 
 Check out the map at [librarymap.hugh.run](https://librarymap.hugh.run).
 
-## TODO
-
-[ ] 
+Find more on this project at [about](about.md).
 
 ## Attributions
 
 See [sources](sources.md).
 
+## Want to help?
+
+See [contributing](contributing.md).
+
 ## Licenses
 
-**/sdata**: [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
+**/data**: [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
+
 **/website**: [GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.txt)
