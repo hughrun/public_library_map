@@ -1,10 +1,16 @@
-# Public library data maps
+# Public library data map
 
-This project will initially map library fine regimes in public libraries across the Australian State of Victoria. In the long term I hope to expand it to all Australian States and Territories and include more data that can be combined and cross-referenced, e.g. library funding from local and state governments, HILDA data, median incomes of the community, PLV data etc.
+This project collects and maps data from public libraries across the Australia and the external Australia Territories of Christmas Island and the Cocos (Keeling) Islands. In the long term I hope to include more data that can be combined and cross-referenced, e.g. library funding from local and state governments, HILDA data, median incomes of the community, PLV data etc.
 
-## Atributions and licences
+You should be able to find the location of every public library in Australia territory, plus the standard loan period for each libary service, and whether they charge overdue fines (if known, in both cases).
 
-Victorian library location data from the Victorian Department of Premier and Cabinet [via data.gov.au](https://data.gov.au/dataset/ds-vic-77d8ec1d-09f1-4b12-a50a-46ed662b980b/distribution/dist-vic-df50417d-2a93-484d-b023-e89bb4325e34/details?q=libraries%20victoria) and used under
-[Creative Commons Attribution 4.0 International licence (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+Check out the map at [librarymap.hugh.run](https://librarymap.hugh.run).
 
-Incorporates or developed using Administrative Boundaries &copy;PSMA Australia Limited licensed by the Commonwealth of Australia under [Creative Commons Attribution 4.0 International licence (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+## Attributions
+
+See [sources](sources.md).
+
+## Licenses
+
+**/sdata**: [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
+**/website**: [GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.txt)
