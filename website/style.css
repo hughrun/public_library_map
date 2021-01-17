@@ -131,21 +131,25 @@ header {
 
 #mode-switch {
   display: grid;
-  align-items: center;
+  grid-template-columns: 1fr auto;
+  width: 90vw;
+  min-width: 90vw;
+  margin: auto;
+  background-color: #000;
 }
 
 #mode-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: 1;
+  border: 0;
   border-radius: 0;
-  border-color: #FF3961;
-  padding: 1em;
-  color: #FF3961;
+  color: #000;
   background-color: #fff;
   font-family: Tahoma, sans-serif;
-  border-radius: 10px;
+  width: fit-content;
+  margin: 5px 1em;
+  padding: 0.5em;
 }
 
 .info-page,
