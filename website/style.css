@@ -1,7 +1,51 @@
 html, 
 body {
+  font-family: "Calibri", Arial, Tahoma, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+a:active,
+a:hover {
+  color: #FF3961
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+header {
+  margin: 0;
+}
+
+nav,
+nav ul {
+  font-family: "Calibri", Arial, Tahoma, sans-serif;
+  background-color: #000;
+  margin: 0;
+}
+
+nav li {
+  padding: 0.5em;
+  border: 1px solid white;
+  border-bottom: none;
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+nav li a:active,
+nav li a:hover {
+  color: #FF3961;
 }
 
 #loading {
@@ -11,7 +55,6 @@ body {
   text-align: center;
   padding: 1em;
   color: #fff;
-  /* background-color: #51A7F9; */
   background-color: #FF3961;
 }
 
@@ -60,7 +103,6 @@ header {
   grid-template-columns: auto 1fr auto;
   padding: 0.5em 1em;
   font-family: "Calibri", Arial, Tahoma, sans-serif;
-  /* background-color: #51A7F9; */
   background-color: #000;
   color: #fff;
 }
@@ -106,10 +148,49 @@ header {
   border-radius: 10px;
 }
 
-.hidden {
-  visibility: hidden;
+.info-page,
+.sources {
+  max-width: 36em;
+  margin: 2em auto;
 }
 
-.visible {
-  visibility: visible;
+table {
+  margin: auto;
+  border-collapse: collapse;
+  border: 1px solid #000;
+  width: 80%;
+}
+
+thead {
+  color: #000;
+  background-color: #bbb;
+  height: 2em;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #eee;
+}
+
+tbody td {
+  border: 1px solid #aaa;
+  padding: 0.5em 1em;
+}
+
+.sources table {
+  margin: 0 auto 0 -25%;
+  width: 150%;
+  max-width: 54em;
+}
+
+@media only screen and (max-width: 54em) {
+
+  .sources {
+    width: 95vw;
+  }
+
+  .sources table {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+  }
 }

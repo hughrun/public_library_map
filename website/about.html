@@ -3,15 +3,63 @@
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>About - Library Map</title>
-    <link rel="shortcut icon" href="library.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="logo.svg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <section>
-      <p>What is the definition of each fine type?
-
-        "No Fines" means that fines are not levied for late return of items. Most libraries charge a "lost" or "replacement" fee for items that are very overdue: this is not considered to be a "library fine" for these purposes.
-      </p>
+    <header>
+      <section id="title">
+        <a href="index.html"><img id="logo" src="logo.svg"/></a>
+        <h2>About Library Map</h2>
+        <p id="beta">Beta!</p>
+      </section>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sources.html">Acknowledgements</a></li>
+        <li><a href="contributing.html">How you can help</a></li>
+        <li><a href="https://github.com/hughrun/public_library_map">Code</a></li>
+      </ul>
+    </nav>
+    <section class="info-page">
+      <h2 id="about-library-map">About Library Map</h2>
+      <p>This project collects and maps data from public libraries across the Australia and the external Australian Territories of Christmas Island and the Cocos (Keeling) Islands. In the long term I hope to include more data that can be combined and cross-referenced, e.g. library funding from local and state governments, HILDA data etc.</p>
+      <p>You should be able to find the location of every public library in Australia territory, plus the standard loan period for each libary service, and whether they charge overdue fines (if known, in both cases).</p>
+      <p>Soon you will be able to see which integrated library system (ILS/LMS) each library service uses.</p>
+      <h3 id="why-this-data">Why this data?</h3>
+      <p>When I worked as a systems librarian in public libraries I often wondered how the social networks of decision makers - most obviously reflected by geography and state borders - affected decision making on things like library sofware procurement. I thought mapping systems visually might reveal things that are less obvious on a simple table or list.</p>
+      <p>Rules about <strong>loan periods</strong> are arbitrary. I thought it might be interesting to see whether there are any regional trends. I’m surprised by some of the results — do some libraries really have a standard loan period of six weeks? Seems kind of long. Why do so many rural libraries only lend items for two weeks? Is it because country people read faster, or something to do with limited book stock? 🤔</p>
+      <p><strong>Fines for overdue library books</strong> are inefficient, ineffective, perverse, and regressive. “Punishable by fine” simply means “legal for rich people”. Mapping library fine regimes provides a view of any regional patterns, helps library managers to identify nearby colleagues who have already made their library fine-free and may be able to provide advice, and also allows activists to identify which libraries and local councils would benefit from some encouragement.</p>
+      <h3 id="definitions">Definitions</h3>
+      <h4 id="overdue-fines">Overdue fines</h4>
+      <p>A library service is classified as charging fines for overdue items if any kind of non-refundable fee is charged prior to <strong>28 days overdue</strong>. This period has been chosen because some libraries declare an item “lost” around that time, and invoice the borrower for a <em>replacement fee</em>. Designating these libraries as “not charging overdue fines” and others that charge e.g. a “notice fee” at the same cutoff time as “charging overdue fines” starts to get a bit weird.</p>
+      <h4 id="fines-for-children">Fines for children</h4>
+      <p>Some libraries charge fines or fees for late-returned items, but exempt members who are under the age of (variously) 12, 16, 17, or 18; and/or for items designated as “for children”. Rather than creating my own specific definition I classify all libraries with a fine regime like this as “no fines for children”. Wouldn’t it be better if they just didn’t charge overdue fines at all?</p>
+      <h4 id="standard-loan-period">Standard loan period</h4>
+      <p>The “standard loan period” is the loan period applied to an ordinary book, and may apply to other items or indeed all items held in a library. Data for Western Australia is provisional and in some cases has been rounded to the nearest “week” (e.g. a 19 day loan period is recorded as 3 weeks).</p>
+      <h4 id="indigenous-knowledge-centre">Indigenous Knowledge Centre</h4>
+      <p>Currently, only libraries classified as <em>Indigenous Knowledge Centres</em> by the State Library of Queensland are classified as such on this map. In future there may be other centres so identified.</p>
+      <h3 id="caveats">Caveats</h3>
+      <p>Most of the data for the map comes from government open data sources. As such it is subject to government bias, and may be out of date or over/under sampled. I make no claim or warranty that the data being complete, accurate, or up to date — though I aim for it to be all of those things. If in doubt, always check with the library directly.</p>
+      <h3 id="nomenclature">Nomenclature</h3>
+      <p>Library locations are classified into four types. In general mode these are:</p>
+      <ul>
+      <li>Settler Knowledge Centres</li>
+      <li>Indigenous Knowledge Centres</li>
+      <li>Worker Pacification Centres</li>
+      <li>Imperial Knowledge Centres</li>
+      </ul>
+      <p>If this naming convention makes you uncomfortable, you may view the map in <em>White fragility mode</em>, in which case the names are:</p>
+      <ul>
+      <li>Public Libraries</li>
+      <li>Indigenous Knowledge Centres</li>
+      <li>Mechanics Institutes</li>
+      <li>National &amp; State Libraries</li>
+      </ul>
+      <p>I will explain a little more about why this is the case, in my talk at the GO GLAM miniconf at linuxconf.au 2021.</p>
     </section>
   </body>
 </html>
