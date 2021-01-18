@@ -13,7 +13,25 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
+    <header>
+      <section id="title">
+        <img id="logo" src="logo.svg"/>
+        <h2>Library Map</h2>
+        <p id="beta">Beta!</p>
+      </section>
+    </header>
+    <nav>
+      <ul>
+        <li class="active-tab">Home</li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="sources.html">Acknowledgements</a></li>
+        <li><a href="contributing.html">How you can help</a></li>
+        <li><a href="https://github.com/hughrun/public_library_map">Code</a></li>
+      </ul>
+    </nav>
+
     <div id="loading">Loading, please be patient...</div>
+
     <!-- leaflet script -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <!-- TopoJSON -->
@@ -30,21 +48,6 @@
     <script src="mechanics.js" type="text/javascript"></script>
     <script src="nsla.js" type="text/javascript"></script>
 
-    <header>
-      <section id="title">
-        <img id="logo" src="logo.svg"/>
-        <h2>Library Map</h2>
-        <p id="beta">Beta!</p>
-      </section>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="sources.html">Acknowledgements</a></li>
-        <li><a href="contributing.html">How you can help</a></li>
-        <li><a href="https://github.com/hughrun/public_library_map">Code</a></li>
-      </ul>
-    </nav>
     <section class="intro">
       <p>Made by <a href="https://www.hughrundle.net">Hugh Rundle</a> using open data. Play with the layers by using the layer control at the top right of the map.</p>
       <p>Email <strong>librarymap@hugh.run</strong> if you have any tips or suggestions.</p>
