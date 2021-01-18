@@ -132,14 +132,17 @@ onEachFeature: function onEachFeature(feature, layer) {
   }
 });
 
-// TODO:
 const branches = L.layerGroup([
   L.geoCsv(branchesCsv, {
     firstLineTitles: true, 
     fieldSeparator: ',',
     onEachFeature: function (feature, layer) {
-    layer.bindPopup("<strong>" + feature.properties.town + "</strong><br/>" + feature.properties.address)
-    },
+      layer.bindPopup(
+        `<strong>${feature.properties.town}</strong>` + 
+        `<p>${feature.properties.address}<br/>` +
+        `phone: ${feature.properties.phone}</p>`
+        )
+      },
     pointToLayer: function (feature, latlng) {
       return L.circle(latlng, {color: "#FF3961", radius: 800}) // this is an 800m radius around the library
       }
@@ -147,6 +150,13 @@ const branches = L.layerGroup([
   L.geoCsv(branchesCsv, {
     firstLineTitles: true, 
     fieldSeparator: ',',
+    onEachFeature: function (feature, layer) {
+      layer.bindPopup(
+        `<strong>${feature.properties.town}</strong>` + 
+        `<p>${feature.properties.address}<br/>` +
+        `phone: ${feature.properties.phone}</p>`
+        )
+      },
     pointToLayer: function (feature, latlng) {
       return L.circleMarker(latlng, {color: "#FF3961", radius: 2, fill: true})
       }
@@ -154,13 +164,17 @@ const branches = L.layerGroup([
 ]).addTo(map) // add this to the initial map on load
 
 // Indigenous Knowledge Centre locations from csv file
-var ikcs = L.layerGroup([
+const ikcs = L.layerGroup([
   L.geoCsv(ikcCsv, {
   firstLineTitles: true, 
   fieldSeparator: ',',
   onEachFeature: function (feature, layer) {
-  layer.bindPopup("<strong>" + feature.properties.town + "</strong><br/>" + feature.properties.address)
-  },
+    layer.bindPopup(
+      `<strong>${feature.properties.town}</strong>` + 
+      `<p>${feature.properties.address}<br/>` +
+      `phone: ${feature.properties.phone}</p>`
+      )
+    },
   pointToLayer: function (feature, latlng) {
     return L.circle(latlng, {color: "#76DBA7", radius: 800})
     }
@@ -168,6 +182,13 @@ var ikcs = L.layerGroup([
   L.geoCsv(ikcCsv, {
     firstLineTitles: true, 
     fieldSeparator: ',',
+    onEachFeature: function (feature, layer) {
+      layer.bindPopup(
+        `<strong>${feature.properties.town}</strong>` + 
+        `<p>${feature.properties.address}<br/>` +
+        `phone: ${feature.properties.phone}</p>`
+        )
+      },
     pointToLayer: function (feature, latlng) {
       return L.circleMarker(latlng, {color: "#76DBA7", radius: 2, fill: true})
     }
@@ -175,13 +196,17 @@ var ikcs = L.layerGroup([
 ]).addTo(map) // add this to the initial map on load
 
 // mechanics institutes (Vic) & schools of arts (NSW) locations from csv file
-var mechsAndSoA = L.layerGroup([
+const mechsAndSoA = L.layerGroup([
   L.geoCsv(mechanics, {
     firstLineTitles: true, 
     fieldSeparator: ',',
     onEachFeature: function (feature, layer) {
-    layer.bindPopup("<strong>" + feature.properties.town + "</strong><br/>" + feature.properties.address)
-    },
+      layer.bindPopup(
+        `<strong>${feature.properties.town}</strong>` + 
+        `<p>${feature.properties.address}<br/>` +
+        `phone: ${feature.properties.phone}</p>`
+        )
+      },
     pointToLayer: function (feature, latlng) {
       return L.circle(latlng, {color: "rgb(255,165,0)", radius: 800})
     }
@@ -189,6 +214,13 @@ var mechsAndSoA = L.layerGroup([
   L.geoCsv(mechanics, {
     firstLineTitles: true, 
     fieldSeparator: ',',
+    onEachFeature: function (feature, layer) {
+      layer.bindPopup(
+        `<strong>${feature.properties.town}</strong>` + 
+        `<p>${feature.properties.address}<br/>` +
+        `phone: ${feature.properties.phone}</p>`
+        )
+      },
     pointToLayer: function (feature, latlng) {
       return L.circleMarker(latlng, {color: "rgb(255,165,0)", radius: 2, fill: true})
     }
@@ -196,13 +228,17 @@ var mechsAndSoA = L.layerGroup([
 ]).addTo(map) // add this to the initial map on load
 
 // NSLA locations from csv file
-var otherLibs = L.layerGroup([
+const otherLibs = L.layerGroup([
   L.geoCsv(nslaBranches, {
     firstLineTitles: true, 
     fieldSeparator: ',',
     onEachFeature: function (feature, layer) {
-    layer.bindPopup("<strong>" + feature.properties.town + "</strong><br/>" + feature.properties.address)
-    },
+      layer.bindPopup(
+        `<strong>${feature.properties.town}</strong>` + 
+        `<p>${feature.properties.address}<br/>` +
+        `phone: ${feature.properties.phone}</p>`
+        )
+      },
     pointToLayer: function (feature, latlng) {
       return L.circle(latlng, {color: "#75f857", radius: 800})
       }
@@ -210,6 +246,13 @@ var otherLibs = L.layerGroup([
   L.geoCsv(nslaBranches, {
     firstLineTitles: true, 
     fieldSeparator: ',',
+    onEachFeature: function (feature, layer) {
+      layer.bindPopup(
+        `<strong>${feature.properties.town}</strong>` + 
+        `<p>${feature.properties.address}<br/>` +
+        `phone: ${feature.properties.phone}</p>`
+        )
+      },
     pointToLayer: function (feature, latlng) {
       return L.circleMarker(latlng, {color: "#75f857", radius: 2, fill: true})
     }
