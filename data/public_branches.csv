@@ -1,4 +1,4 @@
-var branchesCsv = `lat,lng,town,address,phone
+lat,lng,town,address,phone
 -35.5574374,138.6107874,Victor Harbor Public Library Service, 1 Bay Road, 08 8551 0730
 -35.3310245,140.5208524, Lameroo School Community Library, 1 Bews Terrace, 08 8576 3040
 -34.9338609,138.5615464, Hamra Centre Library, 1 Brooker Terrace, 08 8416 6228
@@ -1447,4 +1447,3 @@ Pine Creek NT ",08 8976 1287
 -33.924510947019,147.203855188584,WEST WYALONG LIBRARY,,
 -33.6093750931183,150.817833456299,WINDSOR LIBRARY,,
 -33.4094787205636,151.36443967922,WYOMING LIBRARY,,
-`
