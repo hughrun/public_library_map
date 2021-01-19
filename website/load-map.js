@@ -1,5 +1,5 @@
 // add tile layer from OSM
-var baseMap =  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+const baseMap =  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
   maxZoom: 18,
     id: 'mapbox/dark-v10',
@@ -8,7 +8,7 @@ var baseMap =  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/
     accessToken: 'pk.eyJ1IjoiaHVnaHIiLCJhIjoiY2lxenRqMGQyMDJvdWZwbWd0d2JxeGswNiJ9.vfUQRJDzbJhaG_865TSkPA'
 });
 
-var baseRules = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+const baseRules = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a><br>Incorporates Administrative Boundaries ©PSMA Australia Limited licensed by the Commonwealth of Australia under Creative Commons Attribution 4.0 International licence (CC BY 4.0).',
     maxZoom: 18,
     id: 'mapbox/light-v10',
@@ -18,7 +18,7 @@ var baseRules = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}
       });
 
 // attach map to #mapid div above and centre
-var map = L.map('mapid', {
+const map = L.map('mapid', {
     center: [-27.00, 133.000],
     zoom: 5,
     layers: [baseMap]
@@ -43,7 +43,7 @@ L.TopoJSON = L.GeoJSON.extend({
 // -----------------------------------------------------------------
 
 // library services fines overlay
-var fines = new L.TopoJSON(libraryServices, {
+const fines = new L.TopoJSON(libraryServices, {
 style: function(feature){
     return {
       fillColor: getFinesColor(feature.properties.fines),
@@ -64,7 +64,7 @@ onEachFeature: function onEachFeature(feature, layer) {
 
 // fill patterns for loan period overlay
 
-var circles = new L.PatternCircle({
+const circles = new L.PatternCircle({
   color: '#000',
   weight: 1,
   radius: 2,
@@ -74,7 +74,7 @@ var circles = new L.PatternCircle({
   fillOpacity: 1
 });
 
-var loanTwo = new L.Pattern({
+const loanTwo = new L.Pattern({
   width: 8,
   height: 8
 })
@@ -82,12 +82,12 @@ var loanTwo = new L.Pattern({
 loanTwo.addShape(circles);
 loanTwo.addTo(map);
 
-var loanThree = new L.StripePattern({
+const loanThree = new L.StripePattern({
 color: '#000'
 }); 
 loanThree.addTo(map);
 
-var loanFour = new L.StripePattern({
+const loanFour = new L.StripePattern({
 color: '#000',
 weight: 6,
 spaceWeight: 2,
@@ -95,7 +95,7 @@ angle: 45
 }); 
 loanFour.addTo(map);
 
-var loanSix = new L.StripePattern({
+const loanSix = new L.StripePattern({
   color: '#000',
   weight: 2,
   spaceWeight: 6,
@@ -104,15 +104,15 @@ var loanSix = new L.StripePattern({
   loanSix.addTo(map);
 
 function getLoanFillPattern(w) {
-return  w == '2' ? loanTwo :
-        w == '3' ? loanThree :
-        w == '4' ? loanFour :
-        w == '6' ? loanSix : null
+  return  w == '2' ? loanTwo :
+          w == '3' ? loanThree :
+          w == '4' ? loanFour :
+          w == '6' ? loanSix : null
 }
 
 // loan period overlay
-var loanPeriod = new L.TopoJSON(libraryServices, {
-style: function(feature){
+const loanPeriod = new L.TopoJSON(libraryServices, {
+  style: function(feature){
     return {
       weight: 3,
       color: "#fff",
@@ -122,12 +122,11 @@ style: function(feature){
       fillPattern: getLoanFillPattern(feature.properties.standard_loan_weeks)
     }
   },
-
-onEachFeature: function onEachFeature(feature, layer) {
-  layer.on({
-    mouseover: e => highlightFeature(e),
-    mouseout: e => resetHighlight(e, loanPeriod),
-    click: zoomToFeature
+  onEachFeature: function onEachFeature(feature, layer) {
+    layer.on({
+      mouseover: e => highlightFeature(e),
+      mouseout: e => resetHighlight(e, loanPeriod),
+      click: zoomToFeature
     })
   }
 });
@@ -146,7 +145,7 @@ const branches = L.layerGroup([
     pointToLayer: function (feature, latlng) {
       return L.circle(latlng, {color: "#FF3961", radius: 800}) // this is an 800m radius around the library
       }
-    }),
+  }),
   L.geoCsv(branchesCsv, {
     firstLineTitles: true, 
     fieldSeparator: ',',
@@ -156,27 +155,27 @@ const branches = L.layerGroup([
         `<p>${feature.properties.address}<br/>` +
         `phone: ${feature.properties.phone}</p>`
         )
-      },
+    },
     pointToLayer: function (feature, latlng) {
       return L.circleMarker(latlng, {color: "#FF3961", radius: 2, fill: true})
-      }
-    })
+    }
+  })
 ]).addTo(map) // add this to the initial map on load
 
 // Indigenous Knowledge Centre locations from csv file
 const ikcs = L.layerGroup([
   L.geoCsv(ikcCsv, {
-  firstLineTitles: true, 
-  fieldSeparator: ',',
-  onEachFeature: function (feature, layer) {
-    layer.bindPopup(
-      `<strong>${feature.properties.town}</strong>` + 
-      `<p>${feature.properties.address}<br/>` +
-      `phone: ${feature.properties.phone}</p>`
+    firstLineTitles: true, 
+    fieldSeparator: ',',
+    onEachFeature: function (feature, layer) {
+      layer.bindPopup(
+        `<strong>${feature.properties.town}</strong>` + 
+        `<p>${feature.properties.address}<br/>` +
+        `phone: ${feature.properties.phone}</p>`
       )
     },
-  pointToLayer: function (feature, latlng) {
-    return L.circle(latlng, {color: "#76DBA7", radius: 800})
+    pointToLayer: function (feature, latlng) {
+      return L.circle(latlng, {color: "#76DBA7", radius: 800})
     }
   }),
   L.geoCsv(ikcCsv, {
@@ -187,8 +186,8 @@ const ikcs = L.layerGroup([
         `<strong>${feature.properties.town}</strong>` + 
         `<p>${feature.properties.address}<br/>` +
         `phone: ${feature.properties.phone}</p>`
-        )
-      },
+      )
+    },
     pointToLayer: function (feature, latlng) {
       return L.circleMarker(latlng, {color: "#76DBA7", radius: 2, fill: true})
     }
@@ -205,12 +204,12 @@ const mechsAndSoA = L.layerGroup([
         `<strong>${feature.properties.town}</strong>` + 
         `<p>${feature.properties.address}<br/>` +
         `phone: ${feature.properties.phone}</p>`
-        )
-      },
+      )
+    },
     pointToLayer: function (feature, latlng) {
       return L.circle(latlng, {color: "rgb(255,165,0)", radius: 800})
     }
-    }),
+  }),
   L.geoCsv(mechanics, {
     firstLineTitles: true, 
     fieldSeparator: ',',
@@ -219,8 +218,8 @@ const mechsAndSoA = L.layerGroup([
         `<strong>${feature.properties.town}</strong>` + 
         `<p>${feature.properties.address}<br/>` +
         `phone: ${feature.properties.phone}</p>`
-        )
-      },
+      )
+    },
     pointToLayer: function (feature, latlng) {
       return L.circleMarker(latlng, {color: "rgb(255,165,0)", radius: 2, fill: true})
     }
@@ -237,12 +236,12 @@ const otherLibs = L.layerGroup([
         `<strong>${feature.properties.town}</strong>` + 
         `<p>${feature.properties.address}<br/>` +
         `phone: ${feature.properties.phone}</p>`
-        )
-      },
+      )
+     },
     pointToLayer: function (feature, latlng) {
       return L.circle(latlng, {color: "#75f857", radius: 800})
-      }
-    }),
+    }
+  }),
   L.geoCsv(nslaBranches, {
     firstLineTitles: true, 
     fieldSeparator: ',',
@@ -251,8 +250,8 @@ const otherLibs = L.layerGroup([
         `<strong>${feature.properties.town}</strong>` + 
         `<p>${feature.properties.address}<br/>` +
         `phone: ${feature.properties.phone}</p>`
-        )
-      },
+      )
+    },
     pointToLayer: function (feature, latlng) {
       return L.circleMarker(latlng, {color: "#75f857", radius: 2, fill: true})
     }
@@ -262,28 +261,28 @@ const otherLibs = L.layerGroup([
 // ++++++++++++++
 // control layers
 // ++++++++++++++
-var baseMaps = {
+const baseMaps = {
 "Libraries" : baseMap,
 // "Languages" : baseLang,
 "Rules" : baseRules,
 }
 
 // change the overlay name depending on the mode.
-var modeButton = document.getElementById('mode-button');
+const modeButton = document.getElementById('mode-button');
 
-var overlayMaps = {
-  "Settler Knowledge Centres" : branches,
-  "Indigenous Knowledge Centres": ikcs,
-  "Worker Pacification Centres" : mechsAndSoA,
-  "Imperial Knowledge Centres": otherLibs
+const overlayMaps = {
+    "Settler Knowledge Centres" : branches,
+    "Indigenous Knowledge Centres": ikcs,
+    "Worker Pacification Centres" : mechsAndSoA,
+    "Imperial Knowledge Centres": otherLibs
   }
 
 function setGeneral() {
   overlayMaps = {
-  "Settler Knowledge Centres" : branches,
-  "Indigenous Knowledge Centres": ikcs,
-  "Worker Pacification Centres" : mechsAndSoA,
-  "Imperial Knowledge Centres": otherLibs
+    "Settler Knowledge Centres" : branches,
+    "Indigenous Knowledge Centres": ikcs,
+    "Worker Pacification Centres" : mechsAndSoA,
+    "Imperial Knowledge Centres": otherLibs
   }
   modeButton.innerText = "View in White Fragility mode";
 }
@@ -326,7 +325,7 @@ function switchMode() {
 modeButton.addEventListener('click', switchMode, false);
 
 // add control layers
-var mapControl = L.control.layers(
+const mapControl = L.control.layers(
     baseMaps, 
     overlayMaps, 
     { "collapsed" : false }
@@ -336,7 +335,7 @@ var mapControl = L.control.layers(
 L.control.scale().addTo(map);
 
 // info boxes
-var infoBoxes = {
+const infoBoxes = {
   branches: L.control(),
   fines: L.control(),
   loanPeriod: L.control(),
@@ -344,16 +343,16 @@ var infoBoxes = {
 }
 
 function getFinesColor(f) {
-return  f == 'no' ? '#4dac26' :
-        f == 'yes' ? '#d01c8b' :
-        f == 'adults' ? '#f1b6da' :
-        f == 'by_lga' ? '#abd9e9' :
-        f == 'no_unconfirmed' ? '#b8e186' : '#bbb';
+  return  f == 'no' ? '#4dac26' :
+          f == 'yes' ? '#d01c8b' :
+          f == 'adults' ? '#f1b6da' :
+          f == 'by_lga' ? '#abd9e9' :
+          f == 'no_unconfirmed' ? '#b8e186' : '#bbb';
 }
 
 // highlight feature on mouse hover
 function highlightFeature(e) {
-  var layer = e.target;
+  const layer = e.target;
   layer.setStyle({
     weight: 6,
     color: '#FF3961',
@@ -383,7 +382,7 @@ function addLegend() {
   this._div = L.DomUtil.create('div', 'info')
   this.update();
   return this._div;
-  }
+}
 
 // FINES LEGEND
 infoBoxes.fines.onAdd = addLegend;
