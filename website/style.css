@@ -5,9 +5,14 @@ body {
   padding: 0;
 }
 
-a:active,
+a,
+a:active {
+  color: #FF3961;
+  text-decoration: none;
+}
+
 a:hover {
-  color: #FF3961
+  text-decoration: underline;
 }
 
 .hidden {
@@ -39,7 +44,6 @@ nav li {
 }
 
 nav li a {
-  text-decoration: none;
   color: #fff;
 }
 
@@ -67,7 +71,7 @@ nav li a:hover {
 #mapid { 
   height: 75vh;
   width: 90vw;
-  margin: auto;
+  margin: 0 auto 5em;
 }
 
 .circle {
