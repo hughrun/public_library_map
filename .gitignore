@@ -1,4 +1,4 @@
 *.xlsx
 website/data/all_library_services.geojson
 website/data/boundaries.geojson
-website/data/secrets.js
+website/secrets.js
