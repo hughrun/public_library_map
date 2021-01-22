@@ -51,5 +51,3 @@ If this naming convention makes you uncomfortable, you may view the map in *Whit
 * Indigenous Knowledge Centres
 * Mechanics Institutes
 * National & State Libraries
-
-I will explain a little more about why this is the case, in my talk at the GO GLAM miniconf at linuxconf.au 2021.
