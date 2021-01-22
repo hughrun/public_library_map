@@ -1,16 +1,16 @@
 const boundaries = fetch('data/boundaries.topo.json')
 .then( response => response.json())
 
-const branchesCsv = fetch('data/public_branches.csv')
+const branchesCsv = fetch('data/public_library_locations.csv')
 .then( response => response.text());
 
-const ikcCsv = fetch('data/ikcs.csv')
+const ikcCsv = fetch('data/indigenous_knowledge_centre_locations.csv')
 .then( response => response.text());
 
-const mechanics = fetch('data/mechanics_institutes.csv')
+const mechanics = fetch('data/mechanics_institute_locations.csv')
 .then( response => response.text());
 
-const nslaBranches = fetch('data/nsla.csv')
+const nslaBranches = fetch('data/nsla_library_locations.csv')
 .then( response => response.text());
 
 Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
@@ -55,7 +55,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
       }
     },
   });
-  // // Copyright (c) 2013 Ryan Clark (MIT)
+  // This snippet Copyright (c) 2013 Ryan Clark (MIT License)
 
   // -----------------------------------------------------------------
 
@@ -279,7 +279,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   // ++++++++++++++
   const baseMaps = {
   "Libraries" : baseMap,
-  // "Languages" : baseLang,
+  // TODO: "Languages" : baseLang,
   "Rules" : baseRules,
   }
 
