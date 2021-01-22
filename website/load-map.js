@@ -67,7 +67,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
         weight: 3,
         color: "white",
         dashArray: "4",
-        fillOpacity: 0.4
+        fillOpacity: 0.2
       }
     },
   onEachFeature: function onEachFeature(feature, layer) {
@@ -133,7 +133,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
         weight: 3,
         color: "#fff",
         dashArray: "4",
-        fillOpacity: 0.6,
+        fillOpacity: 0.2,
         fillColor: "#bbb",
         fillPattern: getLoanFillPattern(feature.properties.standard_loan_weeks)
       }
