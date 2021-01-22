@@ -18,6 +18,6 @@ See [contributing](contributing.md).
 
 ## Licenses
 
-**/data**: [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
+**/website/data**: [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 
-**/website**: [GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.txt)
+**everything else**: [GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.txt)
