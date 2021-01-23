@@ -51,3 +51,16 @@ If this naming convention makes you uncomfortable, you may view the map in *Whit
 * Indigenous Knowledge Centres
 * Mechanics Institutes
 * National & State Libraries
+
+### Important files that are not in this repository
+
+If you look at `merge_service_data.py` you will notice that there are two files used in creating `website/data/boundaries.topo.json` that are missing from this repository:
+
+* website/data/boundaries.geojson
+* website/data/all_library_services.geojson
+
+The first is the "core" geojson file with boundaries for each library service. The only other data it holds is the name of each area. The second is the file created when we run `merge_service_data.py` to merge data from `website/data/library_services_information.csv` into `website/data/boundaries.topo.json`.
+
+These files aren't included in the GitHub repo for the simple reason that Git has a 100MB limit, and both files are larger than that.
+
+If you want to update library service data (e.g. to add missing data about the standard loan period for a particular library service) then **you should edit `website/data/library_services_information.csv`** &mdash; *not* `website/data/boundaries.topo.json`. After I merge your PR I will then pull down the updated file, run the merge script, and update the topoJSON file. It would be better to automate this and I can probably rewrite the script to update the TopoJSON directly, but currently that's the workflow, and it will *always* be that contributors should update the CSV file, not the JSON.

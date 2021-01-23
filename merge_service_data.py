@@ -5,15 +5,15 @@ import json
 from titlecase import titlecase # you need to install the titlecase package from PyPi :-)
 
 # files to merge
-geojson_file = 'data/all_library_services.geojson'
-csv_file = 'data/library_services.csv'
+geojson_file = 'website/data/all_library_services.geojson'
+csv_file = 'website/data/library_services_information.csv'
 
 # fields to match on
 geojson_match = 'name'
 csv_match = 'short_name'
 
 # output file name
-output_file = 'data/boundaries.geojson'
+output_file = 'website/data/boundaries.geojson'
 
 # open the geojson file
 file = open(geojson_file, 'r')
