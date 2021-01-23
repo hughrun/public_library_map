@@ -319,6 +319,24 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
     setGeneral()
   }
 
+  // add control layers
+  var mapControl = L.control.layers(
+    baseMaps, 
+    overlayMaps, 
+    { "collapsed" : false }
+  ).addTo(map);
+
+  // scale
+  L.control.scale().addTo(map);
+
+  // info boxes
+  const infoBoxes = {
+    branches: L.control(),
+    fines: L.control(),
+    loanPeriod: L.control(),
+    serviceInfo: L.control({position: 'topleft'})
+  }
+
   // switching mode between standard and fragile
   function switchMode() {
     if (sessionStorage.getItem('mapMode') === 'fragile') {
@@ -339,24 +357,6 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   }
 
   modeButton.addEventListener('click', switchMode, false);
-
-  // add control layers
-  const mapControl = L.control.layers(
-      baseMaps, 
-      overlayMaps, 
-      { "collapsed" : false }
-    ).addTo(map);
-
-  // scale
-  L.control.scale().addTo(map);
-
-  // info boxes
-  const infoBoxes = {
-    branches: L.control(),
-    fines: L.control(),
-    loanPeriod: L.control(),
-    serviceInfo: L.control({position: 'topleft'})
-  }
 
   function getFinesColor(f) {
     return  f == 'no' ? '#4dac26' :
