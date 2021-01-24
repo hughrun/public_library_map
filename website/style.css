@@ -20,6 +20,7 @@ pre {
   font-family: "Jetbrains Mono", "Consolas", "Courier New", monospace;
   background-color: #eee;
   padding: 0 0.5em;
+  word-wrap: break-word;
 }
 
 a,
