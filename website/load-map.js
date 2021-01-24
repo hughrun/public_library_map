@@ -13,6 +13,8 @@ const mechanics = fetch('data/mechanics_institute_locations.csv')
 const nslaBranches = fetch('data/nsla_library_locations.csv')
 .then( response => response.text());
 
+var isSmallScreen = window.screen.availWidth < 800;
+
 Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
 .then( data => {
   // add tile layer from OSM
@@ -37,7 +39,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   // attach map to #mapid div above and centre
   const map = L.map('mapid', {
       center: [-27.00, 133.000],
-      zoom: 5,
+      zoom: isSmallScreen ? 4 : 5,
       layers: [baseMap]
     });
 
@@ -320,7 +322,6 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   }
 
   // add control layers
-  var isSmallScreen = window.screen.availWidth < 800;
   var mapControl = L.control.layers(
     baseMaps, 
     overlayMaps, 
