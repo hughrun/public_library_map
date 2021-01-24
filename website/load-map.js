@@ -74,7 +74,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
     layer.on({
       mouseover: e => highlightFeature(e),
       mouseout: e => resetHighlight(e, fines),
-      click: zoomToFeature
+      click: e => zoomToFeature(e, feature.properties),
       })
     }
   });
@@ -320,10 +320,11 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   }
 
   // add control layers
+  var isSmallScreen = window.screen.availWidth < 800;
   var mapControl = L.control.layers(
     baseMaps, 
     overlayMaps, 
-    { "collapsed" : false }
+    { "collapsed" : isSmallScreen }
   ).addTo(map);
 
   // scale
@@ -344,15 +345,19 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
       setGeneral()
       mapControl.remove();
       infoBoxes.branches.remove()
-      mapControl = L.control.layers(baseMaps, overlayMaps, {"collapsed": false}).addTo(map);
-      infoBoxes.branches.addTo(map)
+      mapControl = L.control.layers(baseMaps, overlayMaps, {"collapsed": isSmallScreen}).addTo(map);
+      if (!isSmallScreen) {
+        infoBoxes.branches.addTo(map)
+      }
     } else {
       sessionStorage.setItem('mapMode', 'fragile');
       setFragile()
       mapControl.remove();
       infoBoxes.branches.remove()
-      mapControl = L.control.layers(baseMaps, overlayMaps, {"collapsed": false}).addTo(map);
-      infoBoxes.branches.addTo(map)
+      mapControl = L.control.layers(baseMaps, overlayMaps, {"collapsed": isSmallScreen}).addTo(map);
+      if (!isSmallScreen) {
+        infoBoxes.branches.addTo(map)
+      }
     }
   }
 
@@ -379,15 +384,32 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
       layer.bringToFront();
     }
-    infoBoxes.serviceInfo.addTo(map)
-    infoBoxes.serviceInfo.update(layer.feature.properties);
+    if (!isSmallScreen) {
+      infoBoxes.serviceInfo.addTo(map)
+      infoBoxes.serviceInfo.update(layer.feature.properties)
+    }
+  }
+
+ 
+  function zoomToFeature(e, props) {
+    map.fitBounds(e.target.getBounds());
+    e.target.bindPopup(`
+    <strong>${props.name}</strong>` + 
+    `<p>Fines: ` + 
+    (
+      props.fines === "no" ? "No" : 
+      props.fines == "no_unconfirmed" ? "Probably no" : 
+      props.fines === "yes" ? "Yes" : 
+      props.fines == "adults" ? "No for children" :
+      props.fines == "by_lga" ? "Varies by LGA" : "Unknown"
+    ) + 
+    `<br/>Loans : ` + 
+    (!props.standard_loan_weeks || props.standard_loan_weeks == "?" ? `Unknown` : `${props.standard_loan_weeks} weeks`) + 
+    `</p>`
+    ).openPopup()
   }
 
   // clear on mouseout
-  function zoomToFeature(e) {
-    map.fitBounds(e.target.getBounds());
-  }
-
   function resetHighlight(e, layer) {
     layer.resetStyle(e.target);
     infoBoxes.serviceInfo.remove()
@@ -423,7 +445,9 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   <h4>Library Branches</h4>
   <p>Circles represent an 800 metre radius from the library location. This is the distance generally used by urban planners to represent "conceptually within walking distance" for most people.</p>
   `};
-  infoBoxes.branches.addTo(map) // add by default
+  if (!isSmallScreen) {
+    infoBoxes.branches.addTo(map) // add by default it larger screen
+  }
 
   // STANDARD LOAN PERIOD LEGEND
   infoBoxes.loanPeriod.onAdd = addLegend;
@@ -498,10 +522,14 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   // add info boxes & markers when relevant layer is added
   map.on('overlayadd', l => {
     if (l.name == "Fines") {
-      infoBoxes.fines.addTo(map)
+      if (!isSmallScreen) {
+        infoBoxes.fines.addTo(map)
+      }
     } 
     if (l.name == "Loan Period") {
-      infoBoxes.loanPeriod.addTo(map)
+      if (!isSmallScreen) {
+        infoBoxes.loanPeriod.addTo(map)
+      }
       loanPeriod.bringToBack()
     }
   })
@@ -533,7 +561,9 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
       for (let k in overlayMaps ) {
         mapControl.addOverlay(overlayMaps[k], k)
       }
-      infoBoxes.branches.addTo(map);
+      if (!isSmallScreen) {
+        infoBoxes.branches.addTo(map)
+      }
       modeButton.setAttribute('class', 'visible');
     }
   })
