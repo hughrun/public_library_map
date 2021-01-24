@@ -509,27 +509,9 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
     )}
   }
 
-  // remove info boxes & markers when relevant layer is removed
-  map.on('overlayremove', l => {
-    if (l.name == "Fines") {
-      infoBoxes.fines.remove()
-    } 
-    if (l.name == "Loan Period") {
-      infoBoxes.loanPeriod.remove()
-    } 
-  })
-
-  // add info boxes & markers when relevant layer is added
+  // loan period layer is always at bottom
   map.on('overlayadd', l => {
-    if (l.name == "Fines") {
-      if (!isSmallScreen) {
-        infoBoxes.fines.addTo(map)
-      }
-    } 
     if (l.name == "Loan Period") {
-      if (!isSmallScreen) {
-        infoBoxes.loanPeriod.addTo(map)
-      }
       loanPeriod.bringToBack()
     }
   })
@@ -550,6 +532,10 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
       for (let i in overlayMaps ) {
         mapControl.removeLayer(overlayMaps[i])
         overlayMaps[i].remove()
+      }
+      if (!isSmallScreen) { // only add infoboxes to larger screens
+        infoBoxes.loanPeriod.addTo(map)
+        infoBoxes.fines.addTo(map)
       }
       modeButton.setAttribute('class', 'hidden'); // hide the mode button when it's not relevant
     } else {
