@@ -8,6 +8,10 @@ I'd love your help to make *Library Map* as accurate and useful as possible.
 2. You can [send a pull request](https://docs.github.com/en/github/.collaborating-with-issues-and-pull-requests/about-pull-requests) &mdash; though it is *strongly preferred* that you either ask to be assigned to an existing issue, or create a new issue, first.
 3. You can just send an email to `librarymap`@`hugh`.`run`.
 
+### If you have not used Git or GitHub before
+
+There is a class outline for an [introduction to Git and GitHub aimed at librarians](https://librarycarpentry.org/lc-git/) at `librarycarpentry.org`. This assumes you are using the command line. If you create or already have a GitHub account, you can also [edit files directly in the browser](https://docs.github.com/en/github/managing-files-in-a-repository/editing-files-in-another-users-repository), or use [GitHub Desktop](https://desktop.github.com/) - both of which are probably less intimidating options if you don't have any desire to learn how to use a command line/shell interface, or just want to make a single minor update.
+
 ### Which files to update
 
 To update information about library *services* (e.g. fines info, loan period etc) you should edit `website/data/library_services_information.csv`
