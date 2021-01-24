@@ -41,7 +41,7 @@ Library locations are generally provided by state government departments.
 | Source  | Link  | License |
 |---      |---    |      ---|
 | Libraries Tasmania / data.gov.au | [Libraries Tasmania locations](https://data.gov.au/dataset/ds-dga-409f7f64-35ef-4a70-8db1-dd737a6fabec/details?q=libraries) | CC-BY 4.0 |
-| Vicmap Features of Interest | https://discover.data.vic.gov.au/dataset/vicmap-features-of-interest | CC-BY 4.0 |
+| Vicmap Features of Interest | [data.vic.gov.au FoI](https://discover.data.vic.gov.au/dataset/vicmap-features-of-interest) | CC-BY 4.0 |
 | ACT Open Data Portal | [ACT Libraries locations](https://www.data.act.gov.au/dataset/Library-Locations-Map/3nit-7kex) | CC-BY 4.0 |
 | NSW State Library (NSW library locations and contacts) | [Public library services](https://www.sl.nsw.gov.au/public-library-services/about-public-library-services/find-public-library-nsw) | &copy; (fair dealing) |
 | State Library of Queensland | [Queensland public libraries directory](https://www.data.qld.gov.au/dataset/public-libraries) | CC-BY 4.0 |

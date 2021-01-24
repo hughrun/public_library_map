@@ -19,7 +19,7 @@ To update information about library *locations* (e.g. street address, phone numb
 * `website/data/nsla_library_locations.csv`
 * `website/data/public_library_locations.csv`
 
-Do not directly edit JSON files - these are [updated programatically](about.md#important-files-that-are-not-in-this-repository).
+Do not directly edit JSON files - these are [updated programatically](https://github.com/hughrun/public_library_map/blob/master/about.md#important-files-that-are-not-in-this-repository).
 
 ### Citing and crediting data sources
 

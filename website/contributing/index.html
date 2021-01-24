@@ -15,36 +15,58 @@
         <h2>Contributing to Library Map</h2>
         <p id="beta">Beta!</p>
       </section>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/sources">Acknowledgements</a></li>
+          <li class="active-tab">How you can help</li>
+          <li><a href="https://github.com/hughrun/public_library_map">Code</a></li>
+        </ul>
+      </nav>
     </header>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/sources">Acknowledgements</a></li>
-        <li class="active-tab">How you can help</li>
-        <li><a href="https://github.com/hughrun/public_library_map">Code</a></li>
-      </ul>
-    </nav>
-    <section class="info-page">
-      <h2 id="contributing">Contributing</h2>
-      <p>I’d love your help to make <em>Library Map</em> as accurate and useful as possible.</p>
-      <h3 id="how-to-contribute-your-idea-bug-report-or-improvement">How to contribute your idea, bug report or improvement</h3>
-      <ol type="1">
-      <li>You can <a href="https://github.com/hughrun/public_library_map/issues">create an issue</a> on GitHub.</li>
-      <li>You can <a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests">send a pull request</a> — though it is <em>strongly preferred</em> that you either ask to be assigned to an existing issue, or create a new issue, first.</li>
-      <li>You can just send an email to <code>librarymap</code>@<code>hugh</code>.<code>run</code></li>
-      </ol>
-      <h3 id="missing-or-inaccurate-data">Missing or inaccurate data</h3>
-      <p>Currently we’re missing data for some library services in relation to <strong>standard loan periods</strong> and <strong>fines for overdue items</strong>.</p>
-      <p>It’s likely that some <strong>library location data</strong> is inaccurate — especially for New South Wales. It’s also possible that the address data is wrong (even though the location shown may be correct), and in some cases it is missing.</p>
-      <p>It’s possible that some of the <strong>fines data for Queensland</strong> is a little off. This came from the State Library of Queensland but I know for a fact that some of the data was wrong (e.g. Gold Coast Libraries does not charge overdue fines, but the SLQ reports says it does).</p>
-      <p>I am particularly interested if you know of data sources for entire regions, states, or Australia — especially if they’re reliably kept up to date.</p>
-      <h3 id="ideas-for-additional-data">Ideas for additional data</h3>
-      <p>You might have an idea for library data that would be useful to map. I’m really happy to hear about these ideas! It’s possible that the information you want to map is unavailable, or just really hard to get, or maybe I will disagree that it’s useful. That’s ok - please ask anyway, expecially if you know where to find the data.</p>
-      <h3 id="improvements-to-documentation">Improvements to documentation</h3>
-      <p>I’m always — <em>always</em> — happy to hear how I can improve documentation. Even better if you make the edit and then send a pull request.</p>
-      <h3 id="improvements-to-the-website-design-layout-or-information">Improvements to the website design, layout, or information</h3>
-      <p>You might have an idea for an improvement that’s not about the data per se, but rather about the website. Maybe there’s some accessibilty improvements I can make. Let me know!</p>
-    </section>
+    <main>
+      <section class="info-page">
+        <h2 id="contributing">Contributing</h2>
+        <p>I’d love your help to make <em>Library Map</em> as accurate and useful as possible.</p>
+        <h3 id="how-to-contribute-your-idea-bug-report-or-improvement">How to contribute your idea, bug report or improvement</h3>
+        <ol type="1">
+        <li>You can <a href="https://github.com/hughrun/public_library_map/issues">create an issue</a> on GitHub.</li>
+        <li>You can <a href="https://docs.github.com/en/github/.collaborating-with-issues-and-pull-requests/about-pull-requests">send a pull request</a> — though it is <em>strongly preferred</em> that you either ask to be assigned to an existing issue, or create a new issue, first.</li>
+        <li>You can just send an email to <code>librarymap</code>@<code>hugh</code>.<code>run</code>.</li>
+        </ol>
+        <h3 id="which-files-to-update">Which files to update</h3>
+        <p>To update information about library <em>services</em> (e.g. fines info, loan period etc) you should edit <code>website/data/library_services_information.csv</code></p>
+        <p>To update information about library <em>locations</em> (e.g. street address, phone number, coordinates) you shoudl edit the relevant csv location file:</p>
+        <ul>
+        <li><code>website/data/indigenous_knowledge_centre_locations.csv</code></li>
+        <li><code>website/data/mechanics_institute_locations.csv</code></li>
+        <li><code>website/data/nsla_library_locations.csv</code></li>
+        <li><code>website/data/public_library_locations.csv</code></li>
+        </ul>
+        <p>Do not directly edit JSON files - these are <a href="https://github.com/hughrun/public_library_map/blob/master/about.md#important-files-that-are-not-in-this-repository">updated programatically</a>.</p>
+        <h3 id="citing-and-crediting-data-sources">Citing and crediting data sources</h3>
+        <p>If you are adding a lot of data and have a new source for it, make sure it is cited. You should update the list of sources at both <code>sources.md</code> <em>and</em> <code>website/sources/index.html</code>. If your source is “I just know because it’s my local library” or “I looked it up on their website” you don’t need to add that to the list of sources. If your source is “I found a PDF listing every public library on the State Library website”, you do.</p>
+        <h3 id="missing-or-inaccurate-data">Missing or inaccurate data</h3>
+        <p>Currently we’re missing data for some library services in relation to <strong>standard loan periods</strong> and <strong>fines for overdue items</strong>.</p>
+        <p>It’s likely that some <strong>library location data</strong> is inaccurate — especially for New South Wales. It’s also possible that the address data is wrong (even though the location shown may be correct), and in some cases it is missing.</p>
+        <p>It’s possible that some of the <strong>fines data for Queensland</strong> is a little off. This came from the State Library of Queensland but I know for a fact that some of the data was wrong (e.g. Gold Coast Libraries does not charge overdue fines, but the SLQ reports says it does).</p>
+        <p>I am particularly interested if you know of data sources for entire regions, states, or Australia — especially if they’re reliably kept up to date.</p>
+        <p>If you can fill in any of these blanks, please update the relevant CSV file and send a pull request. If your data is coming from somewhere in particular, you should also add that to <code>sources.md</code> in the relevant table.</p>
+        <h3 id="ideas-for-additional-data">Ideas for additional data</h3>
+        <p>You might have an idea for library data that would be useful to map. I’m really happy to hear about these ideas! It’s possible that the information you want to map is unavailable, or just really hard to get, or maybe I will disagree that it’s useful. That’s ok - please ask anyway, expecially if you know where to find the data.</p>
+        <h3 id="improvements-to-documentation">Improvements to documentation</h3>
+        <p>I’m always — <em>always</em> — happy to hear how I can improve documentation. Even better if you make the edit and then send a pull request.</p>
+        <h3 id="improvements-to-the-website-design-layout-or-information">Improvements to the website design, layout, or information</h3>
+        <p>You might have an idea for an improvement that’s not about the data per se, but rather about the website. Maybe there’s some accessibilty improvements I can make. Let me know!</p>
+        <h3 id="licensing-and-copyright">Licensing and copyright</h3>
+        <p>By contributing to this project you agree to license your work under the following licenses:</p>
+        <p><strong>/website/data/*</strong>: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA</a></p>
+        <p><strong>everything else</strong>: <a href="https://www.gnu.org/licenses/gpl-3.0.txt">GPL-3.0-or-later</a></p>      
+      </section>
+    </main>
+    <footer>
+      <p>This website and the data it uses licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a></p>
+    </footer>
   </body>
 </html>
