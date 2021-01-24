@@ -38,4 +38,4 @@ for feature in json_data['features']:
 
 # write out new geojson file with the updates
 with open(output_file, 'w') as newfile:
-  json.dump(json_data, newfile, indent=2)
+  json.dump(json_data, newfile, separators=(',', ':'))
