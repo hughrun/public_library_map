@@ -36,6 +36,15 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
       accessToken: mapBoxToken
         });
 
+  const baseIls = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a><br>Incorporates Administrative Boundaries ©PSMA Australia Limited licensed by the Commonwealth of Australia under Creative Commons Attribution 4.0 International licence (CC BY 4.0).',
+    maxZoom: 18,
+    id: 'mapbox/light-v10',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: mapBoxToken
+      });
+
   // attach map to #mapid div above and centre
   const map = L.map('mapid', {
       center: [-27.00, 133.000],
@@ -276,16 +285,37 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
     })
   ]).addTo(map) // add this to the initial map on load
 
+  // integrated library management software
+  const ils = new L.TopoJSON(data[0], {
+    style: function(feature){
+        return {
+          fillColor: getIlsColor(feature.properties.ILS),
+          weight: 3,
+          color: "white",
+          dashArray: "4",
+          fillOpacity: 0.2
+        }
+      },
+    onEachFeature: function onEachFeature(feature, layer) {
+      layer.on({
+        mouseover: e => highlightFeature(e),
+        mouseout: e => resetHighlight(e, ils),
+        click: e => zoomToFeature(e, feature.properties),
+        })
+      }
+    });
+
+
   // ++++++++++++++
   // control layers
   // ++++++++++++++
   const baseMaps = {
   "Libraries" : baseMap,
-  // TODO: "Languages" : baseLang,
   "Rules" : baseRules,
+  "Library Management Software" : baseIls
   }
 
-  // change the overlay name depending on the mode.
+  // change the branches overlay names depending on the mode.
   const modeButton = document.getElementById('mode-button');
 
   var overlayMaps = {
@@ -372,6 +402,26 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
             f == 'no_unconfirmed' ? '#b8e186' : '#bbb';
   }
 
+  function getIlsColor(f) {
+    return  f == 'AIT Aurora' ? '#d16a6e' :
+            f == 'Champ LMSi' ? '#ff00db' :
+            f == 'Civica Spydus' ? '#800080' :
+            f == 'DECD Bookmark' ? '#e1153e' :
+            f == 'Follett Destiny' ? '#df4917' :
+            f == 'Infor V-smart' ? '#e174c1' :
+            f == 'Innovative Sierra' ? '#ff0000' :
+            f == 'Koha ILS' ? '#2fbf2f' :
+            f == 'Libero' ? '#ffa500' :
+            f == 'Locally developed' ? '#bfdf17' :
+            f == 'OCLC Amlib' ? '#ddb372' :
+            f == 'OCLC WorldCat' ? '#3b2fbf' :
+            f == 'OCLC WorldShare' ? '#2fbf97' :
+            f == 'Sirsi Dynix Horizon' ? '#ffff00' :
+            f == 'Sirsi Dynix Symphony' ? '#115583' :
+            f == 'Softlink Liberty' ? '#00f9ff' :
+            f == 'SumWare Athenaeum' ? '#ff3232' : '#bbb';
+  }
+
   // highlight feature on mouse hover
   function highlightFeature(e) {
     const layer = e.target;
@@ -406,6 +456,8 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
     ) + 
     `<br/>Loans : ` + 
     (!props.standard_loan_weeks || props.standard_loan_weeks == "?" ? `Unknown` : `${props.standard_loan_weeks} weeks`) + 
+    `<br/>Software : ` + 
+    (!props.ILS || props.ILS == "?" ? `Unknown` : `${props.ILS}`) + 
     `</p>`
     ).openPopup()
   }
@@ -491,7 +543,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   `
   };
 
-  // FOCUSSED AREA INFOBOX
+  // FOCUSSED AREA INFOBOX (pops up on top left)
   infoBoxes.serviceInfo.onAdd = addLegend;
   infoBoxes.serviceInfo.update = function(props) {
     if (props) {
@@ -503,11 +555,12 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
       props.fines === "yes" ? "Overdue fines for all users" : 
       props.fines == "adults" ? "No overdue fines for children" :
       props.fines == "by_lga" ? "Fine policy varies" : "No fines data"
-    ) + '</p><p>' +
-    (
-      !props.standard_loan_weeks || props.standard_loan_weeks == "?" ? `No loan period data` : `${props.standard_loan_weeks} week loans` +
+    ) + '<br/>' +
+    (!props.standard_loan_weeks || props.standard_loan_weeks == "?" ? `No loan period data` : `${props.standard_loan_weeks} week loans`) +
+      `<br/>Software: ` + 
+      (!props.ILS || props.ILS == "?" ? `Unknown` : `${props.ILS}`) +
     '</p></section>'
-    )}
+    }
   }
 
   // loan period layer is always at bottom
@@ -526,6 +579,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
         infoBoxes[k].remove()
       }
     if (l.name == "Rules") {
+      modeButton.setAttribute('class', 'hidden'); // hide the mode button when it's not relevant
       mapControl.addOverlay(fines, "Fines")
       mapControl.addOverlay(loanPeriod, "Loan Period")
       loanPeriod.addTo(map)
@@ -534,16 +588,31 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
         mapControl.removeLayer(overlayMaps[i])
         overlayMaps[i].remove()
       }
+      ils.remove()
       if (!isSmallScreen) { // only add infoboxes to larger screens
         infoBoxes.loanPeriod.addTo(map)
         infoBoxes.fines.addTo(map)
       }
+    } else if (l.name == "Library Management Software") {
       modeButton.setAttribute('class', 'hidden'); // hide the mode button when it's not relevant
-    } else {
+      // remove any other layers
+      for (let i in overlayMaps ) {
+        mapControl.removeLayer(overlayMaps[i])
+        overlayMaps[i].remove()
+      }
       mapControl.removeLayer(fines)
       mapControl.removeLayer(loanPeriod)
       fines.remove()
       loanPeriod.remove()
+      // add ILS layer
+      ils.addTo(map)
+    } else {
+      // if 'Libraries' layer...
+      mapControl.removeLayer(fines)
+      mapControl.removeLayer(loanPeriod)
+      fines.remove()
+      loanPeriod.remove()
+      ils.remove()
       branches.addTo(map)
       for (let k in overlayMaps ) {
         mapControl.addOverlay(overlayMaps[k], k)
