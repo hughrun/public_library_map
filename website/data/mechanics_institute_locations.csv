@@ -1,11 +1,11 @@
-lat,lng,town,address
--36.995814,144.067624,Maldon Athenaeum,97 High Street
--37.562362,143.858541,Ballaarat Mechanics Institute,117 Sturt Street
--38.030828,145.345353,Berwick Mechanics Institute & Free Library,15 High Street
--37.025488,145.85277,Bonnie Doon Community Centre,75 Arnot Street
--37.80347,144.899093,Footscray Mechanics Institute Library,209 Nicholson Street
--37.964509,144.4996,Little River Mechanics Hall and Free Library,8 Rothwell Library
--37.849806,144.991688,Prahran Mechanics Insitute Victorian History Library,39 Edmonds Road
--35.896013,141.995651,Rainbow Bell Room Library,Oasis Hub
--36.405122,146.755398,Stanley Athenaeum & Public Room,2 Mount Stanley Road
--38.664017,146.325216,Toora Mechanics Institute Library,23 Gray Street
+lat,lng,town,address,phone
+-36.995814,144.067624,Maldon Athenaeum,97 High Street,no phone number
+-37.562362,143.858541,Ballaarat Mechanics Institute,117 Sturt Street,03 5331 3042
+-38.030828,145.345353,Berwick Mechanics Institute & Free Library,15 High Street,03 9707 3519
+-37.025488,145.85277,Bonnie Doon Community Centre,75 Arnot Street,03 5778 7722
+-37.80347,144.899093,Footscray Mechanics Institute Library,209 Nicholson Street,03 9687 1935
+-37.964509,144.4996,Little River Mechanics Hall and Free Library,8 Rothwell Library,no phone number
+-37.849806,144.991688,Prahran Mechanics Insitute Victorian History Library,39 Edmonds Road,03 9510 3393
+-35.896013,141.995651,Rainbow Bell Room Library,Oasis Hub,no phone number
+-36.405122,146.755398,Stanley Athenaeum & Public Room,2 Mount Stanley Road,03 5728 6594
+-38.664017,146.325216,Toora Mechanics Institute Library,23 Gray Street,no phone number
