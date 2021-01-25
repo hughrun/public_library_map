@@ -35,7 +35,6 @@ for feature in json_data['features']:
   downcased = titlecase(feature['properties'][geojson_match]) # titlecase name
   feature['properties']['name'] = downcased
 
-
 # write out new geojson file with the updates
 with open(output_file, 'w') as newfile:
   json.dump(json_data, newfile, separators=(',', ':'))
