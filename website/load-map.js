@@ -416,10 +416,9 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
             f == 'Libero' ? '#ffa500' :
             f == 'Locally developed' ? '#bfdf17' :
             f == 'OCLC Amlib' ? '#ddb372' :
-            f == 'OCLC WorldCat' ? '#3b2fbf' :
             f == 'OCLC WorldShare' ? '#2fbf97' :
-            f == 'Sirsi Dynix Horizon' ? '#ffff00' :
-            f == 'Sirsi Dynix Symphony' ? '#115583' :
+            f == 'SirsiDynix Horizon' ? '#ffff00' :
+            f == 'SirsiDynix Symphony' ? '#115583' :
             f == 'Softlink Liberty' ? '#00f9ff' :
             f == 'SumWare Athenaeum' ? '#ff3232' : '#bbb';
   }
