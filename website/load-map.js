@@ -328,25 +328,27 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   function setGeneral() {
     overlayMaps = {
       "Settler Knowledge Centres" : branches,
-      "Indigenous Knowledge Centres": ikcs,
-      "Worker Pacification Centres" : mechsAndSoA,
-      "Imperial Knowledge Centres": otherLibs
+      "Indigenous Knowledge Centres" : ikcs,
+      "Mechanics Institutes" : mechsAndSoA,
+      "Colonial Knowledge Centres" : otherLibs
     }
-    modeButton.innerText = "View in White Fragility mode";
+    modeButton.setAttribute('class', 'visible');
+    modeButton.innerText = "View in Colonial Mode";
   }
 
-  function setFragile() {
+  function setColonial() {
     overlayMaps = {
       "Public Libraries" : branches,
-      "Indigenous Knowledge Centres": ikcs,
+      "Indigenous Knowledge Centres" : ikcs,
       "Mechanics Institutes" : mechsAndSoA,
       "National & State Libraries" : otherLibs
       };
-      modeButton.innerText = "View in General mode";
+      modeButton.setAttribute('class', 'visible');
+      modeButton.innerText = "View in Standard Mode";
   }
 
-  if (sessionStorage.getItem('mapMode') === 'fragile') {
-    setFragile()
+  if (sessionStorage.getItem('mapMode') === 'colonial') {
+    setColonial()
   } else {
     setGeneral()
   }
@@ -369,9 +371,9 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
     serviceInfo: L.control({position: 'topleft'})
   }
 
-  // switching mode between standard and fragile
+  // switching mode between standard and colonial
   function switchMode() {
-    if (sessionStorage.getItem('mapMode') === 'fragile') {
+    if (sessionStorage.getItem('mapMode') === 'colonial') {
       sessionStorage.setItem('mapMode', 'general');
       setGeneral()
       mapControl.remove();
@@ -381,8 +383,8 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
         infoBoxes.branches.addTo(map)
       }
     } else {
-      sessionStorage.setItem('mapMode', 'fragile');
-      setFragile()
+      sessionStorage.setItem('mapMode', 'colonial');
+      setColonial()
       mapControl.remove();
       infoBoxes.branches.remove()
       mapControl = L.control.layers(baseMaps, overlayMaps, {"collapsed": isSmallScreen}).addTo(map);
@@ -441,7 +443,6 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
     }
   }
 
- 
   function zoomToFeature(e, props) {
     map.fitBounds(e.target.getBounds());
     e.target.bindPopup(`

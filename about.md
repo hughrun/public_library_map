@@ -42,15 +42,17 @@ Library locations are classified into four types. In general mode these are:
 
 * Settler Knowledge Centres
 * Indigenous Knowledge Centres
-* Worker Pacification Centres
-* Imperial Knowledge Centres
+* Mechanics Institutes
+* Colonial Knowledge Centres
 
-If this naming convention makes you uncomfortable, you may view the map in *White fragility mode*, in which case the names are:
+If this naming convention is confusing, you may view the map in *Colonial mode*, in which case the names are:
 
 * Public Libraries
 * Indigenous Knowledge Centres
 * Mechanics Institutes
 * National & State Libraries
+
+Standard Mode invites you to think about the work these institutions do to normalise certain types of knowledge and not others.
 
 ### Important files that are not in this repository
 
