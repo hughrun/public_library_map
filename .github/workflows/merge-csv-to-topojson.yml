@@ -14,7 +14,7 @@ jobs:
           fetch-depth: 0
       - name: Merge CSV to TopoJSON
         run: |
-          python3 ./github/scripts/merge_csv_to_topojson.py
+          python3 ./.github/scripts/merge_csv_to_topojson.py
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
