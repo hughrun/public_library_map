@@ -1,0 +1,24 @@
+name: Merge CSV to TopoJSON
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - website/data/library_services_information.csv
+jobs:
+  mergeData:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Merge CSV to TopoJSON
+        run: ./github/scripts/merge_csv_to_topojson.py
+        shell: python3
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: update TopoJSON
+          title: Update TopoJSON
+          body: Update boundaries.topo.json with new data from library_services_information.csv
+          branch: auto-update-topo
