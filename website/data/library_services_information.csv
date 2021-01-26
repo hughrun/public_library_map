@@ -1,5 +1,5 @@
-long_name,name,state,fines,standard_loan_weeks,ILS,
-Libraries ACT,ACT,act,no,4,Civica Spydus,
+long_name,name,state,fines,standard_loan_weeks,ILS,website
+Libraries ACT,ACT,act,no,4,Civica Spydus,https://www.library.act.gov.au
 Adelaide City Council Library Service ,Adelaide,sa,?,4,SirsiDynix Symphony,
 Adelaide Hills Library Service ,Adelaide Hills,sa,no,4,SirsiDynix Symphony,
 Adelaide Plains Library Service ,Adelaide Plains,sa,?,?,SirsiDynix Symphony,
