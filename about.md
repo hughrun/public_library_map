@@ -54,15 +54,8 @@ If this naming convention is confusing, you may view the map in *Colonial mode*,
 
 Standard Mode invites you to think about the work these institutions do to normalise certain types of knowledge and not others.
 
-### Important files that are not in this repository
+### Important file that is not in this repository
 
-If you look at `merge_service_data.py` you will notice that there are two files used in creating `website/data/boundaries.topo.json` that are missing from this repository:
+The "core" geojson file with boundaries for each library service is not in the repository. The only other data it holds is the name of each area. When boundaries need to be changed for some reason (a regional library service de-merges, for example), this file needs to be updated using GQIS, and then processed into TopoJSON using `geo2topo`.
 
-* website/data/boundaries.geojson
-* website/data/all_library_services.geojson
-
-The first is the "core" geojson file with boundaries for each library service. The only other data it holds is the name of each area. The second is the file created when we run `merge_service_data.py` to merge data from `website/data/library_services_information.csv` into `website/data/boundaries.topo.json`.
-
-These files aren't included in the GitHub repo for the simple reason that Git has a 100MB limit, and both files are larger than that.
-
-If you want to update library service data (e.g. to add missing data about the standard loan period for a particular library service) then **you should edit `website/data/library_services_information.csv`** &mdash; *not* `website/data/boundaries.topo.json`. After I merge your PR I will then pull down the updated file, run the merge script, and update the topoJSON file. It would be better to automate this and I can probably rewrite the script to update the TopoJSON directly, but currently that's the workflow, and it will *always* be that contributors should update the CSV file, not the JSON.
+This file isn't included in the GitHub repo for the simple reason that Git has a 100MB limit, and the file is larger than that. I could use Git-LFS but GitHub charges for moving large files around, and updating this file will rarely be necessary. If you want to access the geojson file you can find it at [librarymap.hugh.run/data/boundaries.geojson](https://librarymap.hugh.run/data/boundaries.geojson) \[105MB]. Contributors to this file are noted in [sources](sources.md).
