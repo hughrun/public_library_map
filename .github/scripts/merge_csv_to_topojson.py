@@ -3,8 +3,8 @@ import csv
 import json
 
 # files to merge
-csv_file = '../../website/data/library_services_information.csv'
-topojson_file = '../../website/data/boundaries.topo.json'
+csv_file = './website/data/library_services_information.csv'
+topojson_file = './website/data/boundaries.topo.json'
 
 geo = open(topojson_file, 'r') # open the topo.json file
 json_data = json.loads(geo.read()) # read the file and load into a dict
