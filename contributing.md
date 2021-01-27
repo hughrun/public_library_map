@@ -4,9 +4,10 @@ I'd love your help to make *Library Map* as accurate and useful as possible.
 
 ### How to contribute your idea, bug report or improvement
 
-1. You can [create an issue](https://github.com/hughrun/public_library_map/issues) on GitHub.
-2. You can [send a pull request](https://docs.github.com/en/github/.collaborating-with-issues-and-pull-requests/about-pull-requests) &mdash; though it is *strongly preferred* that you either ask to be assigned to an existing issue, or create a new issue, first.
-3. You can just send an email to `librarymap`@`hugh`.`run`.
+1. Look at the [current GitHub issues tagged `help wanted`](https://github.com/hughrun/public_library_map/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) to see if you can help. Most of these will be to do with updating data, like finding street addresses or other information.
+2. You can [create a new issue](https://github.com/hughrun/public_library_map/issues) on GitHub.
+3. You can [send a pull request](https://docs.github.com/en/github/.collaborating-with-issues-and-pull-requests/about-pull-requests) &mdash; though it is *strongly preferred* that you either ask to be assigned to an existing issue (so everyone knows you're working on it), or create a new issue, first.
+4. You can just send an email to `librarymap`@`hugh`.`run` and ask me to fix/add something.
 
 ### If you have not used Git or GitHub before
 

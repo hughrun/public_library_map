@@ -31,16 +31,17 @@
         <p>I’d love your help to make <em>Library Map</em> as accurate and useful as possible.</p>
         <h3 id="how-to-contribute-your-idea-bug-report-or-improvement">How to contribute your idea, bug report or improvement</h3>
         <ol type="1">
-        <li>You can <a href="https://github.com/hughrun/public_library_map/issues">create an issue</a> on GitHub.</li>
-        <li>You can <a href="https://docs.github.com/en/github/.collaborating-with-issues-and-pull-requests/about-pull-requests">send a pull request</a> — though it is <em>strongly preferred</em> that you either ask to be assigned to an existing issue, or create a new issue, first.</li>
-        <li>You can just send an email to <code>librarymap</code>@<code>hugh</code>.<code>run</code>.</li>
+          <li>Look at the <a href="https://github.com/hughrun/public_library_map/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22">current GitHub issues tagged <code>help wanted</code></a>to see if you can help. Most of these will be to do with updating data, like finding street addresses or other information.</li>
+        <li>You can <a href="https://github.com/hughrun/public_library_map/issues">create a new issue</a> on GitHub.</li>
+        <li>You can <a href="https://docs.github.com/en/github/.collaborating-with-issues-and-pull-requests/about-pull-requests">send a pull request</a> — though it is <em>strongly preferred</em> that you either ask to be assigned to an existing issue (so everyone knows you're working on it), or create a new issue, first.</li>
+        <li>You can just send an email to <code>librarymap</code>@<code>hugh</code>.<code>run</code> and ask me to fix/add something.</li>
         </ol>
         <h3 id="if-you-have-not-used-git-or-github-before">If you have not used Git or GitHub before</h3>
         <p>There is a class outline for an <a href="https://librarycarpentry.org/lc-git/">introduction to Git and GitHub aimed at librarians</a> at <code>librarycarpentry.org</code>. This assumes you are using the command line. If you create or already have a GitHub account, you can also <a href="https://docs.github.com/en/github/managing-files-in-a-repository/editing-files-in-another-users-repository">edit files directly in the browser</a>, or use <a href="https://desktop.github.com/">GitHub Desktop</a> - both of which are probably less intimidating options if you don’t have any desire to learn how to use a command line/shell interface, or just want to make a single minor update.</p>
         <h3 id="which-files-to-update">Which files to update</h3>
         <p>To update information about library <em>services</em> (e.g. fines info, loan period etc) you should edit <code>website/data/library_services_information.csv</code></p>
         <p>After your Pull Request is merged, a GitHub Action will automatically create a second pull request that merges data from <code>website/data/library_services_information.csv</code> into <code>website/data/boundaries.topo.json</code>. Please do not edit the <code>topo.json</code> file directly.</p>
-        <p>To update information about library <em>locations</em> (e.g. street address, phone number, coordinates) you shoudl edit the relevant csv location file:</p>
+        <p>To update information about library <em>locations</em> (e.g. street address, phone number, coordinates) you should edit the relevant csv location file:</p>
         <ul>
         <li><code>website/data/indigenous_knowledge_centre_locations.csv</code></li>
         <li><code>website/data/mechanics_institute_locations.csv</code></li>
