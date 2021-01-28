@@ -6,7 +6,7 @@ on:
     paths:
       - boundaries.geo.json
 jobs:
-  mergeData:
+  prepare:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -14,6 +14,13 @@ jobs:
           fetch-depth: 0
       - name: Update TopoJSON boundaries
         run: ./.github/scripts/minify-map-json.sh
+  merge:
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge CSV to TopoJSON
+        run: |
+          python3 ./.github/scripts/merge_csv_to_topojson.py
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
