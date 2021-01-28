@@ -1,0 +1,30 @@
+name: Minify Map JSON
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - ./boundaries.geo.json
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Update TopoJSON boundaries
+        run: ./.github/scripts/minify-map-json.sh
+  merge:
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge CSV to TopoJSON
+        run: |
+          python3 ./.github/scripts/merge_csv_to_topojson.py
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Update TopoJSON boundaries
+          title: Update TopoJSON boundaries
+          body: Clean and minify GeoJSON and process to TopoJSON
+          branch: geo-to-topo
