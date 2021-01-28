@@ -16,7 +16,7 @@ jobs:
       - name: Update GeoJSON boundaries
         run: |
           sudo npm install -g mapshaper
-          mapshaper ./boundaries.geo.json snap -clean -o force precision=0.0001 format=geojson ./boundaries.geo.json
+          mapshaper boundaries.geo.json snap -clean -o force precision=0.0001 format=geojson boundaries.geo.json
   process:
     needs: prepare
     runs-on: ubuntu-latest
@@ -24,7 +24,7 @@ jobs:
       - name: Update TopoJSON boundaries
         run: |
           sudo npm install -g topojson-server
-          geo2topo ./boundaries.geo.json -q 50000 > ./website/data/boundaries.topo.json
+          geo2topo boundaries.geo.json -q 50000 > website/data/boundaries.topo.json
   merge:
     needs: process
     runs-on: ubuntu-latest
