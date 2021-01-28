@@ -10,7 +10,7 @@ geo = open(topojson_file, 'r') # open the topo.json file
 json_data = json.loads(geo.read()) # read the file and load into a dict
 
 # for each feature, if the name in the json matches the name in the csv, add new properties to the json
-for feature in json_data['objects']['boundaries']['geometries']:
+for feature in json_data['objects']['boundaries.geo']['geometries']:
   with open(csv_file, newline='') as f:
     # use DictReader so we can use the header names
     reader = csv.DictReader(f)
