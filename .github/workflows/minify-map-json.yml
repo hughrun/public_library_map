@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 jobs:
   processJson:
-    if: ${{ github.event.label.name != 'automated' }}
+    if: ${{ github.event.commits.*.message.includes('from hughrun/geo-to-topo') != true }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
