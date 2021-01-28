@@ -22,3 +22,4 @@ jobs:
           title: Update TopoJSON
           body: Update boundaries.topo.json with new data from library_services_information.csv
           branch: auto-update-topo
+          labels: automated,data

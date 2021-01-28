@@ -25,5 +25,6 @@ jobs:
         with:
           commit-message: Update TopoJSON boundaries
           title: Update TopoJSON boundaries
-          body: Clean and minify GeoJSON and process to TopoJSON
+          body: 'Clean & minify GeoJSON; process to TopoJSON; merge library info csv to topo.'
           branch: geo-to-topo
+          labels: automated,data
