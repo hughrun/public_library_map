@@ -4,7 +4,7 @@ on:
     branches:
       - master
     paths:
-      - ./boundaries.geo.json
+      - 'boundaries.geo.json'
 jobs:
   prepare:
     runs-on: ubuntu-latest
