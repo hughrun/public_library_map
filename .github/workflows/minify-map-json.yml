@@ -8,6 +8,7 @@ on:
   workflow_dispatch:
 jobs:
   processJson:
+    if: ${{ github.event.label.name != 'automated' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
