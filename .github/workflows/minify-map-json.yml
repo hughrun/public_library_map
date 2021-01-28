@@ -7,7 +7,7 @@ on:
       - 'boundaries.geo.json'
   workflow_dispatch:
 jobs:
-  prepare:
+  processJson:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,26 +17,8 @@ jobs:
         run: |
           sudo npm install -g mapshaper
           mapshaper boundaries.geo.json snap -clean -o force precision=0.0001 format=geojson boundaries.geo.json
-  process:
-    needs: prepare
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Update TopoJSON boundaries
-        run: |
           sudo npm install -g topojson-server
           geo2topo boundaries.geo.json -q 50000 > website/data/boundaries.topo.json
-  merge:
-    needs: process
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Merge CSV to TopoJSON
-        run: |
           python3 ./.github/scripts/merge_csv_to_topojson.py
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
