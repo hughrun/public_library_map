@@ -21,6 +21,9 @@ jobs:
     needs: prepare
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Update TopoJSON boundaries
         run: |
           sudo npm install -g topojson-server
@@ -29,6 +32,9 @@ jobs:
     needs: process
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Merge CSV to TopoJSON
         run: |
           python3 ./.github/scripts/merge_csv_to_topojson.py
