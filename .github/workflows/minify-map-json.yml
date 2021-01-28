@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 jobs:
   processJson:
-    if: ${{ github.event.commits.*.message.includes('from hughrun/geo-to-topo') != true }}
+    if: "!contains(github.event.head_commit.message 'from hughrun/geo-to-topo')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
