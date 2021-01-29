@@ -1,0 +1,13 @@
+name: Check PR ok to automerge
+
+on: pull_request
+
+jobs:
+  perform-check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check Pull Request
+      uses: hughrun/can-pr-be-automerged-action@v1.2
+      with:
+        required-label: 'automerge'
+        required-user: 'hughrun'
