@@ -5,15 +5,19 @@ on:
       - master
     paths:
       - 'boundaries.geo.json'
+
   workflow_dispatch:
+
 jobs:
   processJson:
     if: "!contains(github.event.head_commit.message, 'from hughrun/geo-to-topo')"
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
       - name: Update GeoJSON boundaries
         run: |
           sudo npm install -g mapshaper
@@ -21,6 +25,7 @@ jobs:
           sudo npm install -g topojson-server
           geo2topo boundaries.geo.json -q 50000 > website/data/boundaries.topo.json
           python3 ./.github/scripts/merge_csv_to_topojson.py
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:

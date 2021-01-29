@@ -5,6 +5,8 @@ on:
     paths:
     - 'website/data/library_services_information.csv'
 
+  workflow_dispatch:
+
 jobs:
   auto-topo-updater:
     runs-on: ubuntu-latest
