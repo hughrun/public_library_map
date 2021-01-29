@@ -23,7 +23,8 @@ jobs:
         labels: |
           automated
           data
-
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Merge CSV to TopoJSON
       run: |
         python3 ./.github/scripts/merge_csv_to_topojson.py
