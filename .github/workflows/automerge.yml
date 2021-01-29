@@ -7,7 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check Pull Request
-      uses: hughrun/can-pr-be-automerged-action@v1.2
+      uses: hughrun/can-pr-be-automerged-action@v1.3
       with:
-        required-label: 'automerge'
         required-user: 'hughrun'
