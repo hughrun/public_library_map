@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check PR can be automerged
-      uses: hughrun/can-pr-be-automerged-action@v1.4
+      uses: hughrun/can-pr-be-automerged-action@v1.5
       with:
         required-user: 'hughrun'
