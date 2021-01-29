@@ -1,4 +1,4 @@
-name: topo auto updater
+name: topo auto updater (push)
 
 on:
   push:
