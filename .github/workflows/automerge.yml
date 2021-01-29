@@ -9,5 +9,5 @@ jobs:
     - name: Check Pull Request
       uses: hughrun/can-pr-be-automerged-action@v1.1
       with:
-        required_label: 'automerge'
-        required_user: 'hughrun'
+        required-label: 'automerge'
+        required-user: 'hughrun'
