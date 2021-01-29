@@ -1,7 +1,7 @@
 long_name,name,state,fines,standard_loan_weeks,ILS,website
 Libraries ACT,ACT,act,no,4,Civica Spydus,https://www.library.act.gov.au
 Adelaide City Council Library Service ,Adelaide,sa,?,4,SirsiDynix Symphony,https://www.cityofadelaide.com.au/community/library-services
-Adelaide Hills Library Service ,Adelaide Hills,sa,no,4,SirsiDynix Symphony,
+Adelaide Hills Library Service ,Adelaide Hills,sa,no,4,SirsiDynix Symphony,https://www.ahc.sa.gov.au/Community/library
 Adelaide Plains Library Service ,Adelaide Plains,sa,?,?,SirsiDynix Symphony,
 Albany City Council,Albany,wa,,3,Civica Spydus,
 Albury City Libraries,Albury,nsw,yes,?,Libero,
