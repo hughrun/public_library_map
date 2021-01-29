@@ -3,7 +3,7 @@ name: topo auto updater
 on:
   pull_request:
     paths:
-    - website/data/library_services_information.csv
+    - 'website/data/library_services_information.csv'
 
 jobs:
   auto-topo-updater:

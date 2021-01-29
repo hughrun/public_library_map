@@ -5,7 +5,8 @@ on:
     branches:
       - "master"
     paths:
-      - website/data/library_services_information.csv
+      - 'website/data/library_services_information.csv'
+      - '!website/data/boundaries.topo.json'
 jobs:
   auto-topo-updater:
     runs-on: ubuntu-latest
