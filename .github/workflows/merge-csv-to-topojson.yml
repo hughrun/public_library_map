@@ -5,6 +5,7 @@ on:
       - master
     paths:
       - website/data/library_services_information.csv
+  workflow_dispatch:
 jobs:
   mergeData:
     runs-on: ubuntu-latest
