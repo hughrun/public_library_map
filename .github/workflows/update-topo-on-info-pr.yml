@@ -4,11 +4,7 @@ on:
   pull_request:
     paths:
     - website/data/library_services_information.csv
-  push:
-    branches:
-      - "master"
-    paths:
-      - website/data/library_services_information.csv
+
 jobs:
   auto-topo-updater:
     runs-on: ubuntu-latest
@@ -21,14 +17,15 @@ jobs:
     - uses: christianvuerings/add-labels@v1
       with:
         labels: |
-          automated
+          auto update
           data
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Merge CSV to TopoJSON
       run: |
         python3 ./.github/scripts/merge_csv_to_topojson.py
 
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: merge csv into topo
+        commit_message: merge csv data to topo
