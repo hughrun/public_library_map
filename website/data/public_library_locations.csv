@@ -61,7 +61,7 @@ lat,lng,town,address,phone
 -34.8219843,138.8864079,Gumeracha Branch,45 Albert Street,08 8408 0420
 -36.836604,139.857566,Kingston Community School Library,46 East Terrace,08 8767 2677 / 8767 3003
 -34.858454,138.556706,Parks Branch,46 Trafford St,08 8405 6550
--38.0523917,140.6990194,Port Macdonnell (Mary Lattin Memorial) Library Service,5 Charles Street,08 8738 3015
+-38.0523917,140.6990194,Port MacDonnell (Mary Lattin Memorial) Library Service,5 Charles Street,08 8738 3015
 -35.0689893,138.855043,Mount Barker Community Library,5 Dumas Street,08 8393 6400
 -33.930392,137.6245596,Wallaroo Library,5 John Terrace,08 8823 2924
 -34.340787,138.915199,Kapunda Branch,51 – 53 Main Street,08 8525 3290
@@ -124,14 +124,14 @@ lat,lng,town,address,phone
 -37.4803116,140.013447,Beachport Library,Millicent Road,08 8735 8029
 -34.0335996,139.6679406,Morgan Library,Morgan & Districts Community Hub,08 8540 0090
 -37.1631547,139.7568771,Robe Public Library Service,Mundy Terrace,08 8768 2465
--34.5980842,138.7392859,Gawler Sport And Community Centre Branch,Nixon Terrace,08 8522 9213
+-34.5980842,138.7392859,Gawler Sport and Community Centre Branch,Nixon Terrace,08 8522 9213
 -35.0913196,139.8952544,Karoonda School Community Library,North Terrace,08 8578 1120
 -32.7297886,138.6126121,Orroroo School Community Library,Orroroo Area School,08 8658 1100
--34.1561473,138.7495512,Riverton And District High School Library,Oxford Terrace,08 8847 2414
+-34.1561473,138.7495512,Riverton and District High School Library,Oxford Terrace,08 8847 2414
 -34.898063,138.594708,Prospect Public Library Service,Payinthi,08 8342 8170
 -32.7606224,134.9738076,Karcultaby School Community Library,Phillips Road,08 8626 3077
 -34.77784428,137.8621744,Minlaton Library Port Vincent Depot,Port Vincent Institute,08 8853 2339
--32.9782655,138.8357974,Peterborough School And Community Library Service,Queen Street,08 8651 2523
+-32.9782655,138.8357974,Peterborough School and Community Library Service,Queen Street,08 8651 2523
 -32.3477065,138.0369195,Quorn School Community Library,Quorn Area School,08 8648 6705
 -37.5929363,140.3502188,Millicent Library,Ridge Terrace,08 8733 0903
 -33.7855723,138.2236739,Snowtown School Community Library,Snowtown Primary School,08 8865 2006
@@ -150,9 +150,8 @@ lat,lng,town,address,phone
 -33.0444983,135.462268,Wudinna School Community Library,Wudinna Area School,08 8680 2194
 -35.0165679,137.6146998,Yorketown School Community Library,Yorketown Area School,08 8852 1647
 -15.92221,145.352361,Bloomfield Library,-,07 4060 8342
--19.258704,146.817816,Citylibraries Home Service,-,07 4727 8324
--19.258638,146.817738,Citylibraries Mobile Library,-,07 4727 8324
--28.077641,153.385599,Gccc - Library Administration (Not Open To Public),-,07 5581 6788
+-19.258704,146.817816,CityLibraries Home Service,-,07 4727 8324
+-19.258638,146.817738,CityLibraries Mobile Library,-,07 4727 8324
 -28.077641,153.385599,Gold Coast Mobile Library,-,07 5581 7272
 -27.61696,152.760038,Ipswich Mobile Library Service,-,07 3810 6887
 -26.652215,153.082895,Mobile Central Route (Mobi 2),-,07 5475 8989
@@ -163,7 +162,7 @@ lat,lng,town,address,phone
 -27.525603,153.266828,Redland Mobile Library,-,07 3829 8400
 -27.989954,152.9956,Scenic Rim Regional Council Mobile Library,-,07 5540 5142
 -27.56155,151.95096,Toowoomba Region Mobile Library,-,-
--27.470842,153.022721,Brisbane Mobile Library Services,"<a href=http://www.brisbane.qld.gov.au/facilities-recreation/libraries/library-opening-hours-locations/mobile-library-services"" target=""_blank"">View Mobile Library stops and calendar</a> """,0414 326 486
+-27.470842,153.022721,Brisbane mobile library services,"<a href=http://www.brisbane.qld.gov.au/facilities-recreation/libraries/library-opening-hours-locations/mobile-library-services"" target=""_blank"">View Mobile Library stops and calendar</a> """,0414 326 486
 -33.9777014103648,151.106218194419,South Hurstville Library,1 Allen Street,
 -33.8833254668971,151.024714786208,Regents Park Library,1 Amy Street,02 8757 9066
 -37.88203,144.735819,Point Cook,1 Cheetham Street,
@@ -173,7 +172,7 @@ lat,lng,town,address,phone
 -31.64107,117.48403,Tammin Public Library,1 Donnan Street,9637 1101
 -26.954499,152.778438,Woodford Library,1 Elizabeth Street,07 5496 1136
 -38.176566,146.260283,Moe,1 George Street,5135 8350
--31.99745,115.76404,Cottesloe/peppermint Grove/mosman Park Public Library,1 Leake Street,9286 8686
+-31.99745,115.76404,Cottesloe/Peppermint Grove/Mosman Park Public Library,1 Leake Street,9286 8686
 -32.06688,118.39429,Narembeen Public Library,1 Longhurst Street,9064 7308
 -33.7975983291583,151.286018883924,Manly Library,1 Market Place,02 9976 1720
 -39.929402,143.851804,Currie,"1 Meech Street, Currie",(03) 6462 1202
@@ -184,7 +183,7 @@ lat,lng,town,address,phone
 -36.717004,144.251269,Eaglehawk,1 Sailors Gully Rd,5446 7577
 -43.031196,147.049732,Huon,"1 Skinner Drive, Huonville",(03) 6121 7010
 -27.311858,152.990598,Strathpine Library,1 Station Road,07 3480 6698
--37.700167,144.774257,Sydenham (watergardens),"1 Station Street, Taylors Lakes",
+-37.700167,144.774257,Sydenham (Watergardens),"1 Station Street, Taylors Lakes",
 -33.8529755286505,151.033467278633,Auburn Library,1 Susan Street,02 8757 9060
 -27.083525,153.159231,Bribie Island Library,1 Welsby Parade,07 3408 1388
 -32.03329,115.83332,Melville Civic Square Public Library,10 Almondbury Road,9364 0138
@@ -207,7 +206,7 @@ lat,lng,town,address,phone
 -36.45533268,142.0274466,Dimboola,101 Lloyd Street Dimboola 3414,03 5389 1734
 -37.89044262,145.2912164,Ferntree Gully,1010 Burwood Highway Ferntree Gully 3156,9294 8140
 -31.74354,115.7735,Joondalup Public Library,102 Boas Avenue,9400 4707
--38.138503,145.151569,Karingal Place,"103 Ashleigh Ave, Frankston",
+-38.138503,145.151569,Karingal PLACE,"103 Ashleigh Ave, Frankston",
 -37.85851898,144.8962876,Williamstown,104 Ferguson Street Williamstown 3018,9932 4170
 -32.8967740090752,151.736878821769,Mayfield Library,104 Hanbury Street,02 4974 6630
 -33.6996614269897,150.568832061283,Springwood Library,104 Macquarie Road,02 4723 5040
@@ -218,7 +217,7 @@ lat,lng,town,address,phone
 -23.443432,144.248244,Longreach Library,106 Eagle Street,07 4658 0735
 -30.224913262788,149.444956781146,Wee Waa Library,106 Rose Street,02 6795 3064
 -37.786437,144.854197,Braybrook,107 Churchill Ave,9188 5850
--37.820019,144.940669,Docklands (Library At The Dock),107 Harbour Promenade,9658 9998
+-37.820019,144.940669,Docklands (Library at the Dock),107 Harbour Promenade,9658 9998
 -27.5650525,153.096605,Coopers Plains Library,107 Orange Grove Road,07 3403 1530
 -19.576055,147.404029,Burdekin Library,108 Graham Street,07 4783 9970
 -30.3792006464642,150.61062645566,Barraba Library,108 Queen Street,02 6782 1606
@@ -310,7 +309,7 @@ lat,lng,town,address,phone
 -37.96768233,146.9782496,Maffra,150 Johnson Street Maffra 3860,03 5147 1052
 -37.835447,144.695763,Tarneit (Julia Gillard),150 Sunset Views Boulevard,
 -16.920195,145.775372,City Library,151 Abbott Street,07 4044 3720
--33.9441065469321,151.222994684388,Eastgardens Library ,152 Bunnerong Road ,02 9366 3888
+-33.9441065469321,151.222994684388,Eastgardens Library,152 Bunnerong Road,02 9366 3888
 -28.9764507376795,148.989191457047,Mungindi Library,153 St George Street,02 6753 2389
 -38.14101024,144.3480403,Geelong West,153B Pakington Street Geelong West 3218,5229 1939
 -23.364701,150.529701,North Rockhampton Library,154 Berserker Street,07 4936 8373
@@ -339,7 +338,7 @@ lat,lng,town,address,phone
 -12.3739951809384,130.879844126674,Casuarina,"17 Bradshaw Terrace, Casuarina NT",08 8930 0200
 -33.871365742419,150.953498511829,Fairfield Library,17 Kenyon Street,02 9725 0333
 -32.4035255170793,151.756212970575,Dungog Library,17 Mackay Street,02 4992 1819
--32.33236,115.81375,Baldivis Library And Community Centre,17 Settlers Avenue,9591 0800
+-32.33236,115.81375,Baldivis Library and Community Centre,17 Settlers Avenue,9591 0800
 -33.9218816502988,150.925781277605,Liverpool City Library,170 George Street,02 8711 7177
 -38.351584,143.590171,Colac,173 Queen Street,5231 4613
 -17.01743,145.74354,Edmonton Library,175 Bruce Highway,07 40443735
@@ -407,7 +406,7 @@ lat,lng,town,address,phone
 -31.8691,115.85946,Mirrabooka Public Library,21 Sudbury Road,9205 7300
 -30.7465216349583,150.719266609453,Manilla Library,210 Manilla Street,02 6767 5920
 -37.711623,142.840777,Lake Bolac,2110 Glenelg Highway,5350 2204
--33.3443016858078,151.496324104808,The Entrance Library And Council Services,211a The Entrance Road,02 4350 1550
+-33.3443016858078,151.496324104808,The Entrance Library and Council Services,211a The Entrance Road,02 4350 1550
 -37.063598,144.217299,Castlemaine,212 Barker Street Castlemaine 3450,5472 1458
 -38.23135423,143.1458382,Camperdown,212 Manifold Street Camperdown 3260,5593 2356
 -34.23418794,142.1664366,Irymple,2128 Fifteenth Street Irymple 3498,5018 8360
@@ -421,7 +420,7 @@ lat,lng,town,address,phone
 -37.82551789,147.6288324,Bairnsdale,22 Service Street Bairnsdale 3875,5152 4225
 -38.03400092,145.2640263,Hampton Park,22-26 Stuart Avenue Hampton Park 3976,(03) 9702 9744
 -37.75444878,144.9458868,Brunswick West (Campbell Turnbull Library),"220 Melville Road Campbell Turnbull Library, Brunswick West 3055",9384 9200
--16.996439,145.423177,Mareeba  Library,221 Byrnes Street,4086 4622
+-16.996439,145.423177,Mareeba Library,221 Byrnes Street,4086 4622
 -35.6440503574206,145.575898913285,Finley Library,223 Murray St,03 5883 5182
 -37.988708,145.213532,Dandenong,225 Lonsdale St,9238 1489
 -33.0917532085597,151.637539388744,Swansea Library,228 Pacific Highway,02 4921 0780
@@ -516,7 +515,7 @@ lat,lng,town,address,phone
 -34.0350430386762,151.097966689732,Miranda Library,31 Wandella Road,02 9524 8217
 -36.123478,144.74881,Echuca,310 Hare Street,5481 2400
 -37.94907561,145.0433521,Highett,310 Highett Road Highett 3190,1300 135 668
--33.90893005295,151.154227791498,Marrickville Library And Pavilion,313 Marrickville Road,02 9335 2173
+-33.90893005295,151.154227791498,Marrickville Library and Pavilion,313 Marrickville Road,02 9335 2173
 -37.78846916,144.930478,Flemington,313 Racecourse Road Flemington 3031,8325 1975
 -37.84137,144.95656,Albert Park,"319 Montague Streeet, Albert Park",9209 6622
 -37.9819023,145.1344779,Dingley,31C Marcus Road Dingley 3172,1300 135 668
@@ -581,8 +580,8 @@ lat,lng,town,address,phone
 -18.267564,146.028734,Cardwell Library,4 Balliol Street,1300 366 616
 -31.20904,121.62172,Kambalda Public Library,4 Barnes Drive,9080 2119
 -24.989775,151.953425,Gin Gin Library,4 Dear Street,07 4130 4620
--35.9141537676707,145.688047184096,Barooga Library,4 Golf Course Road ,03 5873 4701
--19.295081,146.771859,Citylibraries Aitkenvale,4 Petunia Street,07 4727 8310
+-35.9141537676707,145.688047184096,Barooga Library,4 Golf Course Road,03 5873 4701
+-19.295081,146.771859,CityLibraries Aitkenvale,4 Petunia Street,07 4727 8310
 -31.9032,116.04843,Greenmount Public Library,4 Scott Street,9290 6755
 -37.88414449,145.0044487,Elsternwick,4 Staniland Grove Elsternwick 3185,9532 9321
 -42.834443,147.275185,Glenorchy,"4 Terry Street, Glenorchy",(03) 6165 5493
@@ -615,7 +614,7 @@ lat,lng,town,address,phone
 -29.44039,116.2857,Perenjori Public Library,44 Fowler Street,9973 0100
 -37.947901,143.2221,Derrinallum,44 Main Street Derrinallum 3325,5597 6658
 -26.656002,153.101515,Maroochydore Library,44 Sixth Avenue,07 5475 8989
--33.9505759592558,151.139070642575,Rockdale Library,444-446 Princes Highway ,02 9562 1821
+-33.9505759592558,151.139070642575,Rockdale Library,444-446 Princes Highway,02 9562 1821
 -35.9933638,142.9255684,Birchip,45 Campbell St,03 5492 2230
 -31.88937,116.00272,Midland Public Library,45 Helena Street,9267 9020
 -32.9233573363778,151.747905673323,Hamilton Library,45 James Street,02 4974 1340
@@ -649,7 +648,7 @@ lat,lng,town,address,phone
 -31.79798,115.79532,Woodvale Public Library,5 Trappers Drive,9400 4180
 -38.022154,144.411026,Lara,5 Walkers Rd,4201 0668
 -24.864229,151.122568,Monto Library,50 Newton Street,1300 696 272
--33.3077091787485,151.414755357635,Tuggerah Library And Council Services,50 Wyong Road,02 4350 1560
+-33.3077091787485,151.414755357635,Tuggerah Library and Council Services,50 Wyong Road,02 4350 1560
 -31.29898,116.82645,Goomalling Public Library,51 - 53 Railway Terrace,9629 1570
 -31.4570924588818,152.731110160875,Wauchope Library,51 High Street,02 6581 8162
 -41.162008,147.51531,Scottsdale,"51 King Street, Scottsdale",(03) 6778 8586
@@ -670,7 +669,7 @@ lat,lng,town,address,phone
 -41.593685,147.122232,Longford,"55 Wellington Street, Longford",(03) 6777 2408
 -34.36246,117.08175,Frankland Public Library,55 Wingebellup Road,9855 2209
 -29.7765338285819,151.111598625965,Inverell Shire Public Library,55-59 Campbell Street,02 6728 8130
--20.657447,141.743988,Julia Creek Library,56 Burke Street,07 4746 7930
+-20.657447,141.743988,Julia Creek library,56 Burke Street,07 4746 7930
 -28.654121,151.932488,Stanthorpe Library,56 Lock Street,07 4681 2141
 -37.80026175,144.8956908,Footscray,56 Paisley Street Footscray 3011,9688 0290
 -27.405307,152.990503,Everton Park Library,561 South Pine Road,07 3403 7400
@@ -706,8 +705,8 @@ lat,lng,town,address,phone
 -33.825761997436,151.242033441976,Mosman Library,605 Military Road,02 9978 4091
 -41.320788,148.249084,St Helens,"61 Cecilia Street, St Helens",(03) 6387 5600
 -34.5642513782261,150.818936339533,Oak Flats Library,61 Central Avenue,02 4221 6299
--17.384152,145.385812,Herberton  Library & Customer Service Centre,61 Grace Street,07 4096 2775
--31.97104,115.90076,Visability,61 Kitchener Avenue,9311 8271
+-17.384152,145.385812,Herberton Library & Customer Service Centre,61 Grace Street,07 4096 2775
+-31.97104,115.90076,VisAbility,61 Kitchener Avenue,9311 8271
 -28.035935,153.424051,Broadbeach Library,61 Sunshine Boulevard,07 5581 1555
 -36.2365015015702,149.125104421544,Cooma Library,61 Vale Street,02 6450 1730
 -34.6397916691925,148.026228389788,Cootamundra Library,61-71 Wallendoon Street,1300 459 689
@@ -748,7 +747,7 @@ lat,lng,town,address,phone
 -33.1853961229426,148.693927366583,Manildra Library,7 Derowie Street,02 6364 5166
 -31.89985,115.90055,Morley Public Library,7 Dewar Street,9272 0980
 -38.30785043,145.1943518,Hastings,7 High Street Hastings 3915,5950 1710
--23.256404,150.82698,Emu Park Library And Customer Service Centre,7 Hill Street,4913 3874
+-23.256404,150.82698,Emu Park Library and Customer Service Centre,7 Hill Street,4913 3874
 -32.3898729724671,150.68840767922,Denman Library,7 Ogilvie Street,02 6548 2208
 -34.6713206840689,150.854974092414,Kiama Municipal Library,7 Railway Parade,02 4233 1133
 -37.88744034,145.0582785,Carnegie,7 Shepparson Avenue Carnegie 3163,9563 0971
@@ -763,7 +762,7 @@ lat,lng,town,address,phone
 -28.5544334269276,153.502441940136,Mullumbimby Library,70-90 Station Street,02 6684 2992
 -37.716785,144.831151,Keilor,704B Old Keilor Highway,9249 4670
 -41.436002,147.137167,Launceston,"71 Civic Square, Launceston",(03) 6777 2446
--29.7457508760194,151.734635944999,Glen Innes Severn Public & Tafe Library,71 Grey Street,02 6730 2600
+-29.7457508760194,151.734635944999,Glen Innes Severn Public & TAFE Library,71 Grey Street,02 6730 2600
 -35.9881756145861,146.006026044292,Mulwala Library,71 Melbourne Street,03 5744 3439
 -24.212068,151.910282,Agnes Water Library,71 Springs Road,07 4902 1501
 -18.22529,127.66728,Halls Creek Public Library,71 Thomas Street,9168 6007
@@ -811,7 +810,7 @@ lat,lng,town,address,phone
 -33.9475515660922,151.052695579848,Riverwood Library & Knowledge Centre,80 Kentucky Road,02 9707 5436
 -32.03399,115.9783,Kenwick Public Library,80 Kenwick Road,9397 3099
 -30.8101,117.86025,Bencubbin Public Library,80 Monger Street,9685 1202
--33.9149171670957,151.034632649577,Bankstown Library And Knowledge Centre,80 Rickard Road,02 9707 9708
+-33.9149171670957,151.034632649577,Bankstown Library and Knowledge Centre,80 Rickard Road,02 9707 9708
 -26.740794,150.625173,Chinchilla Library,80-86 Heeney Street,07 4660 7270
 -41.113406,146.072802,Penguin,"81 Main Street, Penguin",(03) 6477 7520
 -27.523092,153.072059,Holland Park Library,81 Seville Road,07 3403 7755
@@ -820,7 +819,7 @@ lat,lng,town,address,phone
 -30.7041416595176,150.042364619847,Boggabri Central Northern Branch Library,82 Wee Waa Street,02 6743 4281
 -23.131303,150.741348,Yeppoon Library,84 John Street,4913 3850
 -37.876467,144.604448,Manor Lakes,86 Manor Lakes Blvd,8734 8930
--19.308754,146.73144,Citylibraries Thuringowa Central,86 Thuringowa Drive,07 4773 8811
+-19.308754,146.73144,CityLibraries Thuringowa Central,86 Thuringowa Drive,07 4773 8811
 -37.90724132,145.190587,Wheelers Hill,860 Ferntree Gully Road Wheelers Hill 3150,9561 6211
 -38.338335,144.737285,Sorrento Kiosk,860-868 Melbourne Road,
 -27.4443946,152.987098,Ashgrove Library,87 Amarina Avenue,07 3407 1940
@@ -948,7 +947,7 @@ lat,lng,town,address,phone
 -26.628283,152.959125,Nambour Library,Cnr Bury and Currie Streets,07 5475 8989
 -17.667763,141.08119,Normanton Library,Cnr Caroline and Lansbourough Streets,07 4745 1065
 -28.081617,153.43191,Burleigh Waters Library,Cnr Christine Avenue & Galeen Drive,07 5581 1700
--35.344378,149.083925,Woden Library And Heritage Library,"Cnr Corinna & Furzer Streets, Phillip",
+-35.344378,149.083925,Woden Library,"Cnr Corinna & Furzer Streets, Phillip",
 -33.7029675399886,149.85600192943,Oberon Library,Cnr Dart & Fleming Streets,02 6329 8220
 -29.400491362126,153.352764973585,Iluka Library,Cnr Duke and Micalo Streets,02 6646 6542
 -32.58478,115.65836,Falcon Public Library,Cnr Flavia Street and Cobblers Road,9550 3230
@@ -962,7 +961,7 @@ lat,lng,town,address,phone
 -21.64431,115.11313,Onslow Public Library,Cnr Hooley and McGrath Avenue,9184 6001
 -27.359812,153.040649,Zillmere Library,Cnr Jennings Street and Zillmere Road,07 3403 1455
 -22.825812,147.642152,Clermont Library,Cnr Karmoo and Herschel Street,07 4983 4746
--36.0790335094023,146.916378197161,Albury Librarymuseum,Cnr Kiewa & Swift Streets,02 6023 8333
+-36.0790335094023,146.916378197161,Albury LibraryMuseum,Cnr Kiewa & Swift Streets,02 6023 8333
 -31.83941,115.89483,Ballajura Public Library,Cnr Kingfisher and Illawarra Crescent,9249 1488
 -28.6427174675965,153.613714215204,Byron Bay Library,Cnr Lawson & Middleton Street,02 6685 8540
 -32.06373,115.85558,Bull Creek Public Library,Cnr Leichhardt Street and Hassell Crescent,9364 0150
@@ -1042,7 +1041,7 @@ lat,lng,town,address,phone
 -33.7374111928449,151.072073561948,Pennant Hills Library,Corner Ramsay & Yarrara Roads,02 9847 6100
 -27.869458,153.304354,Upper Coomera Library,Corner Reserve and Abraham Roads,07 5582 9300
 -32.9626617879863,151.697019759637,Charlestown Library,Corner Smith & Ridley Streets,02 4921 0792
--33.9154696258007,151.167427556332,St Peters/sydenham Library,Corner Unwins Bridge Road & Swain Street,02 9335 2184
+-33.9154696258007,151.167427556332,St Peters/Sydenham Library,Corner Unwins Bridge Road & Swain Street,02 9335 2184
 -33.5214042717618,151.320120687417,Umina Beach Library,Corner West & Bullion Streets,02 4304 7333
 -37.807651,145.034488,Kew,Cotham Road and Civic Drive Kew 3101,9278 4677
 -35.414752,149.068624,Tuggeranong Library,"Cowlishaw Street, Greenway",
@@ -1096,7 +1095,7 @@ lat,lng,town,address,phone
 -21.357266,148.115916,Glenden Library,Glenden Shopping Centre,07 4846 3148
 -26.54022,151.837626,Kingaroy Library,Glendon Street,4189 9256
 -38.28137,144.487042,Barwon Heads,Golf Links Road Barwon Heads 3227,5254 2143
--33.2415291467564,151.505089702756,Lake Haven Library And Council Services,Goobarabah Road,02 4350 1570
+-33.2415291467564,151.505089702756,Lake Haven Library and Council Services,Goobarabah Road,02 4350 1570
 -22.97123,145.241581,Aramac Library,Gordon Street,07 4651 3047
 -12.4798379723301,130.983289175704,Palmerston,"Goyder Square, on the Boulevard Palmerston NT",08 8935 9999
 -28.8664890505743,153.04632052296,Casino Library,Graham Place,02 6660 0250
@@ -1159,10 +1158,10 @@ lat,lng,town,address,phone
 -20.41217,118.60159,South Hedland Public Library,Leake Street,9158 9373
 -27.717105,150.371128,Moonie Library,Leichhardt Highway,07 4665 0189
 -20.30181,118.63308,Port Hedland Public Library,"Len Tapin Memorial Centre, Dempster Street",9158 9378
--33.8777188649171,151.243833149274,Woollahra Library At Double Bay,"Level 1, 451 New South Head Road",02 9391 7100
+-33.8777188649171,151.243833149274,Woollahra Library at Double Bay,"Level 1, 451 New South Head Road",02 9391 7100
 -33.8740728108307,151.223540599569,Kings Cross Library,"Level 1, 50-52 Darlinghurst Road",02 9246 4530
 -34.4861018152477,150.888392606759,Warrawong District Library,"Level 1, 67-71 King Street",02 4227 8133
--19.258722,146.817931,Citylibraries Flinders Street Library,"Level 1, Northtown",07 4727 9666
+-19.258722,146.817931,CityLibraries Flinders Street Library,"Level 1, Northtown",07 4727 9666
 -28.16736,153.537115,Coolangatta Library,"Level 1, The Strand",07 5581 7240
 -33.8888481832039,151.124249266837,Ashfield Library,"Level 3, 260 Liverpool Road",02 0392 5810
 -27.605875,152.869477,Redbank Plaza Branch Library,"Level 3, Redbank Plaza Shopping Centre",07 3810 6177
@@ -1203,7 +1202,7 @@ lat,lng,town,address,phone
 -38.357336,144.904627,Rosebud,McDowell Street Rosebud 3939,5950 1230
 -27.928768,151.905416,Clifton Library,Meara Place,07 4697 4223
 -22.809682,148.699619,Middlemount Library,Middlemount Shopping Mall,07 4985 7752
--21.271629,141.289308,Mckinlay Library,Middleton Street,07 4746 8848
+-21.271629,141.289308,McKinlay Library,Middleton Street,07 4746 8848
 -11.424220557169,130.674919656598,Milikapiti,Milikapiti NT,08 8978 3958
 -12.1035206787995,134.920574915612,Milingimibi,"Milingimbi Community Education Centre, Gadapu Road, Milingimbi NT",08 8987 9975
 -34.0960806236115,142.041977914396,Dareton Library,Millie Street,03 5027 4258
@@ -1278,7 +1277,7 @@ lat,lng,town,address,phone
 -30.2962675903393,153.119045667876,Coffs Harbour City Library,"Rigby House, Corner Coff & Duke Streets",02 6648 4900
 -33.8153038479054,151.053439276207,Ermington Library,River Road,02 9806 5869
 -37.879869,145.081617,Phoenix Park (Malvern East),Rob Roy Road Phoenix Park 3148,8290 4000
--30.75328,121.47879,Kalgoorlie-boulder Public Library,Roberts Street,9021 7112
+-30.75328,121.47879,Kalgoorlie-Boulder Public Library,Roberts Street,9021 7112
 -28.077594,153.385207,Robina Library,Robina Town Centre Drive,07 5581 1600
 -26.572964,148.788341,Roma Library,Roma Community Arts Centre,4624 0301
 -14.924990250722,133.068956684379,Mataranka,"Roper Terrace, Mataranka NT",08 8975 4576
@@ -1289,7 +1288,7 @@ lat,lng,town,address,phone
 -38.386999,142.236343,Port Fairy,Sackville Street Port Fairy 3284,5568 2248
 -27.325079,149.881717,Meandarra Library,Sara Street,07 4665 6147
 -31.89466,115.77464,Scarborough Public Library,"Scarborough Civic Centre, 173 Gildercliffe Street",9205 7420
--20.705489,140.507012,Cloncurry Bob Mcdonald Library,Scarr Street,07 4742 1588
+-20.705489,140.507012,Cloncurry Bob McDonald Library,Scarr Street,07 4742 1588
 -43.317713,147.245706,Bruny Online,"School Road, Alonnah, Bruny Island, Tasmania 7150",(03) 6293 2036
 -26.59531,120.22709,Wiluna Public Library,Scotia Street,9981 8000
 -37.213421,145.421917,Yea,Semi-circle Yea 3717,5797 2209
@@ -1388,7 +1387,7 @@ lat,lng,town,address,phone
 -32.0051714182859,149.981047484353,Cassilis Library,,
 -33.8040537393578,151.212326902928,Castlecrag Library,,
 -30.7097577457941,152.919257256687,Clarence Regional Library Macksville,,
--29.4367840337028,153.356904324176,Clarence Regional Ligrary,,
+-29.4367840337028,153.356904324176,Clarence Regional Library,,
 -33.9653355461539,151.132969632813,Clive James Library And Service Centre,,
 -28.9911966371825,153.286187308279,Coraki Library,,
 -31.117205120077,150.267008829246,Curlewis Library,,
@@ -1404,7 +1403,7 @@ lat,lng,town,address,phone
 -33.7785647612552,151.283708042416,Harbord Community Library,,
 -33.8894087817014,151.082311359407,High Street Community Library,,
 -33.4851093950621,145.531452668834,Hillston Library,,
--34.070297671864,150.806558840407,HJ Daley Library Campbelltown,,
+-34.070297671864,150.806558840407,Hj Daley Library Campbelltown,,
 -33.8691462071915,151.083518260364,Homebush Library,,
 -33.7537922204964,151.15237388794,Ku-ring-gai Gordon Library,,
 -33.8680217924821,151.192177346152,Library Link Pyrmont,,
