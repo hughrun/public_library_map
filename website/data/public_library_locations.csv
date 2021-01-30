@@ -206,7 +206,7 @@ lat,lng,town,address,phone
 -36.45533268,142.0274466,Dimboola,101 Lloyd Street Dimboola 3414,03 5389 1734
 -37.89044262,145.2912164,Ferntree Gully,1010 Burwood Highway Ferntree Gully 3156,9294 8140
 -31.74354,115.7735,Joondalup Public Library,102 Boas Avenue,9400 4707
--38.138503,145.151569,Karingal PLACE,"103 Ashleigh Ave, Frankston",
+-38.138503,145.151569,Karingal Place,"103 Ashleigh Ave, Frankston",
 -37.85851898,144.8962876,Williamstown,104 Ferguson Street Williamstown 3018,9932 4170
 -32.8967740090752,151.736878821769,Mayfield Library,104 Hanbury Street,02 4974 6630
 -33.6996614269897,150.568832061283,Springwood Library,104 Macquarie Road,02 4723 5040
@@ -1403,7 +1403,7 @@ lat,lng,town,address,phone
 -33.7785647612552,151.283708042416,Harbord Community Library,,
 -33.8894087817014,151.082311359407,High Street Community Library,,
 -33.4851093950621,145.531452668834,Hillston Library,,
--34.070297671864,150.806558840407,Hj Daley Library Campbelltown,,
+-34.070297671864,150.806558840407,HJ Daley Library Campbelltown,,
 -33.8691462071915,151.083518260364,Homebush Library,,
 -33.7537922204964,151.15237388794,Ku-ring-gai Gordon Library,,
 -33.8680217924821,151.192177346152,Library Link Pyrmont,,
