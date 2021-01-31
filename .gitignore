@@ -1,2 +1,3 @@
 website/data/boundaries.geojson
 website/secrets.js
+node_modules/*

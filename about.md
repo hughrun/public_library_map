@@ -2,9 +2,12 @@
 
 This project collects and maps data from public libraries across the Australia and the external Australian Territories of Christmas Island and the Cocos (Keeling) Islands. In the long term I hope to include more data that can be combined and cross-referenced, e.g. library funding from local and state governments, HILDA data etc.
 
-You should be able to find the location of every public library in Australia territory, plus the standard loan period for each libary service, and whether they charge overdue fines (if known, in both cases).
+You should be able to find:
 
-Soon you will be able to see which integrated library system (ILS/LMS) each library service uses.
+* the location of every public library in Australia territory, plus 
+* the standard loan period for each libary service, and 
+* whether they charge overdue fines, and
+* which integrated library system (ILS/LMS) each library service uses
 
 ### Why this data?
 
@@ -53,9 +56,3 @@ If this naming convention is confusing, you may view the map in *Colonial mode*,
 * National & State Libraries
 
 Standard Mode invites you to think about the work these institutions do to normalise certain types of knowledge and not others.
-
-### Important file that is not in this repository
-
-The "core" geojson file with boundaries for each library service is not in the repository. The only other data it holds is the name of each area. When boundaries need to be changed for some reason (a regional library service de-merges, for example), this file needs to be updated using GQIS, and then processed into TopoJSON using `geo2topo`.
-
-This file isn't included in the GitHub repo for the simple reason that Git has a 100MB limit, and the file is larger than that. I could use Git-LFS but GitHub charges for moving large files around, and updating this file will rarely be necessary. If you want to access the geojson file you can find it at [librarymap.hugh.run/data/boundaries.geojson](https://librarymap.hugh.run/data/boundaries.geojson) \[105MB]. Contributors to this file are noted in [sources](sources.md).

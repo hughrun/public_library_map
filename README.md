@@ -16,6 +16,10 @@ See [sources](sources.md).
 
 See [contributing](contributing.md), especially *[which files to update](https://github.com/hughrun/public_library_map/blob/master/contributing.md#which-files-to-update)*.
 
+## Contributors
+
+Contributors (whether via GitHub or another way) are listed at [contributors.txt](contributors.txt).
+
 ## Licenses
 
 **/website/data**: [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
