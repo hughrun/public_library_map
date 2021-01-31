@@ -1,0 +1,23 @@
+name: Add contributors
+
+on:
+  push:
+    branches: 
+      - "master"
+      - "main"
+
+jobs:
+  update-contributors:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Update text and html files
+      run: |
+        npm install cheerio
+        npm install pretty
+        node ./.github/scripts/contributors.js 
+
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: update contributors
