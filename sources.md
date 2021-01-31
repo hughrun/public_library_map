@@ -4,6 +4,10 @@
 
 If you believe I have breached a license in using your data, or attributed it incorrectly, please get in touch at `librarymap`@`hugh`.`run`
 
+### Contributors
+
+See [contributors](contributors.txt).
+
 ### Visualisation
 
 | Source  | Link  | License |
