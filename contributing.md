@@ -19,7 +19,7 @@ To update information about library *services* (e.g. fines info, loan period etc
 
 After your Pull Request is merged, a GitHub Action will automatically create a second pull request that merges data from `website/data/library_services_information.csv` into `website/data/boundaries.topo.json`. Please do not edit the `topo.json` file directly.
 
-To update information about library *locations* (e.g. street address, phone number, coordinates) you should edit the relevant csv location file:
+To update information about library *locations* (e.g. street address, phone number, coordinates) you shoudl edit the relevant csv location file:
 
 * `website/data/indigenous_knowledge_centre_locations.csv`
 * `website/data/mechanics_institute_locations.csv`
@@ -44,7 +44,7 @@ If you can fill in any of these blanks, please update the relevant CSV file and 
 
 ### Ideas for additional data
 
-You might have an idea for library data that would be useful to map. I'm really happy to hear about these ideas! It's possible that the information you want to map is unavailable, or just really hard to get, or maybe I will disagree that it's useful. That's ok - please ask anyway, especially if you know where to find the data.
+You might have an idea for library data that would be useful to map. I'm really happy to hear about these ideas! It's possible that the information you want to map is unavailable, or just really hard to get, or maybe I will disagree that it's useful. That's ok - please ask anyway, expecially if you know where to find the data.
 
 ### Improvements to documentation
 
@@ -52,7 +52,7 @@ I'm always &mdash; *always* &mdash; happy to hear how I can improve documentatio
 
 ### Improvements to the website design, layout, or information
 
-You might have an idea for an improvement that's not about the data per se, but rather about the website. Maybe there's some accessibility improvements I can make. Let me know!
+You might have an idea for an improvement that's not about the data per se, but rather about the website. Maybe there's some accessibilty improvements I can make. Let me know!
 
 ### Licensing and copyright
 
