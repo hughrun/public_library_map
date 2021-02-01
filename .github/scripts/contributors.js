@@ -12,8 +12,8 @@ for (let name of contributors) {
     for (let commit of eventJson.commits) {
       // we only look for authors, not commiters, so we automatically ignore "actions-user"
       if ( !contributors.includes(commit.author.name) ) {
-        // auto-commits use my username, not my actual name
-        if (commit.author.name != 'hughrun') {
+        // auto-commits for updating TopoJSON use 'Library Map Bot' as user
+        if (commit.author.name != 'Library Map Bot') {
           contributors.push(commit.author.name)
         }
       }

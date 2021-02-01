@@ -29,6 +29,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
+          author: Library Map Bot <librarymap@hugh.run>
           commit-message: Update TopoJSON boundaries
           title: Update TopoJSON boundaries
           body: 'Clean & minify GeoJSON; process to TopoJSON; merge library info csv to topo.'
