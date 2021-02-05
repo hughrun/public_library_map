@@ -1,0 +1,28 @@
+name: topo update (push)
+
+on:
+  push:
+    branches:
+      - 'master'
+    paths:
+      - 'website/data/library_services_information.csv'
+
+  workflow_dispatch:
+
+jobs:
+  auto-topo-updater:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.head_ref }}
+        fetch-depth: 0
+        
+    - name: Merge CSV to TopoJSON
+      run: |
+        python3 ./.github/scripts/merge_csv_to_topojson.py
+
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: merge csv data to topo
