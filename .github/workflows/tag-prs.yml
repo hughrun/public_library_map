@@ -1,0 +1,22 @@
+name: tag PRs
+
+on:
+  pull_request:
+    paths:
+    - 'website/data/*'
+
+  workflow_dispatch:
+
+jobs:
+  auto-topo-updater:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - uses: christianvuerings/add-labels@v1
+      with:
+        labels: |
+          data
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
