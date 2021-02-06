@@ -3,9 +3,10 @@ name: Add contributors
 on:
   push:
     branches: 
-      - "master"
-      - "main"
-
+      - master
+      - main
+    paths:
+      - '!website/data/library_services_information.csv'
 jobs:
   update-contributors:
     runs-on: ubuntu-latest

@@ -3,7 +3,8 @@ name: topo update (push)
 on:
   push:
     branches:
-      - 'master'
+      - master
+      - main
     paths:
       - 'website/data/library_services_information.csv'
 
@@ -22,6 +23,12 @@ jobs:
     - name: Merge CSV to TopoJSON
       run: |
         python3 ./.github/scripts/merge_csv_to_topojson.py
+
+    - name: Update contributors
+      run: |
+        npm install cheerio
+        npm install pretty
+        node ./.github/scripts/contributors.js 
 
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
