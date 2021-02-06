@@ -21,3 +21,4 @@ jobs:
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: update contributors
+        commit_author: Library Map Bot <librarymap@hugh.run>
