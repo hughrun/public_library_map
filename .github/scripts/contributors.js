@@ -8,7 +8,9 @@ var eventJson = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, {encod
 
 $('#contributors-list').empty() // remove all names to start clean
 for (let name of contributors) {
-  if (name.length > 0) {
+  // check the name isn't empty and there are commits
+  // if this is run manually there won't be any commits
+  if (name.length > 0 && eventJson.commits) {
     for (let commit of eventJson.commits) {
       // we only look for authors, not commiters, so we automatically ignore "actions-user"
       if ( !contributors.includes(commit.author.name) ) {
