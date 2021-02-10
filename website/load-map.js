@@ -458,6 +458,8 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
     (!props.standard_loan_weeks || props.standard_loan_weeks == "?" ? `Unknown` : `${props.standard_loan_weeks} weeks`) + 
     `<br/>Software : ` + 
     (!props.ILS || props.ILS == "?" ? `Unknown` : `${props.ILS}`) + 
+    `<br/>Website: ` + 
+    (!props.website || props.website == "?" ? `Unknown` : `<a target="_blank" href="`+ `${props.website}` + `" >` + `${props.website}` + `</a>`) +
     `</p>`
     ).openPopup()
   }
