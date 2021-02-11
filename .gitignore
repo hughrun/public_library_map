@@ -2,3 +2,5 @@ website/data/boundaries.geojson
 website/secrets.js
 node_modules/*
 package-lock.json
+Dockerfile
+docker-commands.txt
