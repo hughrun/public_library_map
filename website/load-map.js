@@ -15,35 +15,60 @@ const nslaBranches = fetch('data/nsla_library_locations.csv')
 
 var isSmallScreen = window.screen.availWidth < 800;
 
-Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
-.then( data => {
-  // add tile layer from OSM
-  const baseMap =  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+function BaseMap(id) {
+  this.id = id;
+  return L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
-      id: 'mapbox/dark-v10',
+      id: id,
       tileSize: 512,
       zoomOffset: -1,
       accessToken: mapBoxToken
-  });
+  })
+}
 
-  const baseRules = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a><br>Incorporates Administrative Boundaries ©PSMA Australia Limited licensed by the Commonwealth of Australia under Creative Commons Attribution 4.0 International licence (CC BY 4.0).',
-      maxZoom: 18,
-      id: 'mapbox/light-v10',
-      tileSize: 512,
-      zoomOffset: -1,
-      accessToken: mapBoxToken
-        });
+function LocationsLayer(data, color) {
+  this.data = data;
+  this.color = color;
+  return L.layerGroup([
+    L.geoCsv(data, {
+      firstLineTitles: true, 
+      fieldSeparator: ',',
+      onEachFeature: function (feature, layer) {
+        layer.bindPopup(
+          `<strong>${feature.properties.town}</strong>` + 
+          `<p>${feature.properties.address}<br/>` +
+          `phone: ${feature.properties.phone}</p>`
+          )
+        },
+      pointToLayer: function (f, latlng) {
+        return L.circle(latlng, {color: color, radius: 800}) // this is an 800m radius around the library
+        }
+    }),
+    L.geoCsv(data, {
+      firstLineTitles: true, 
+      fieldSeparator: ',',
+      onEachFeature: function (feature, layer) {
+        layer.bindPopup(
+          `<strong>${feature.properties.town}</strong>` + 
+          `<p>${feature.properties.address}<br/>` +
+          `phone: ${feature.properties.phone}</p>`
+          )
+      },
+      pointToLayer: function (f, latlng) {
+        return L.circleMarker(latlng, {color: color, radius: 2, fill: true})
+      }
+    })
+  ])
+}
 
-  const baseIls = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a><br>Incorporates Administrative Boundaries ©PSMA Australia Limited licensed by the Commonwealth of Australia under Creative Commons Attribution 4.0 International licence (CC BY 4.0).',
-    maxZoom: 18,
-    id: 'mapbox/light-v10',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: mapBoxToken
-      });
+
+Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
+.then( data => {
+  // add tile layers for each base map
+  const baseMap = new BaseMap('mapbox/dark-v10')
+  const baseRules = new BaseMap('mapbox/light-v10')
+  const baseIls = new BaseMap('mapbox/light-v10')
 
   // attach map to #mapid div above and centre
   const map = L.map('mapid', {
@@ -52,8 +77,20 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
       layers: [baseMap]
     });
 
+  // LOCATION LAYERS
+  const branches = new LocationsLayer(data[1], "#FF3961")
+  const ikcs = new LocationsLayer(data[2], "#76DBA7")
+  const mechsAndSoA = new LocationsLayer(data[3], "rgb(255,165,0)")
+  const otherLibs = new LocationsLayer(data[4], "#75f857")
+  // add to the initial map on load
+  branches.addTo(map)
+  ikcs.addTo(map)
+  mechsAndSoA.addTo(map)
+  otherLibs.addTo(map)
+
   // Use TopoJSON
   // -----------------------------------------------------------------
+  // This snippet Copyright (c) 2013 Ryan Clark (MIT License)
   L.TopoJSON = L.GeoJSON.extend({
     addData: function (jsonData) {
       if (jsonData.type === 'Topology') {
@@ -66,8 +103,6 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
       }
     },
   });
-  // This snippet Copyright (c) 2013 Ryan Clark (MIT License)
-
   // -----------------------------------------------------------------
 
   // library services fines overlay
@@ -158,133 +193,6 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
     }
   });
 
-  const branches = L.layerGroup([
-    L.geoCsv(data[1], {
-      firstLineTitles: true, 
-      fieldSeparator: ',',
-      onEachFeature: function (feature, layer) {
-        layer.bindPopup(
-          `<strong>${feature.properties.town}</strong>` + 
-          `<p>${feature.properties.address}<br/>` +
-          `phone: ${feature.properties.phone}</p>`
-          )
-        },
-      pointToLayer: function (feature, latlng) {
-        return L.circle(latlng, {color: "#FF3961", radius: 800}) // this is an 800m radius around the library
-        }
-    }),
-    L.geoCsv(data[1], {
-      firstLineTitles: true, 
-      fieldSeparator: ',',
-      onEachFeature: function (feature, layer) {
-        layer.bindPopup(
-          `<strong>${feature.properties.town}</strong>` + 
-          `<p>${feature.properties.address}<br/>` +
-          `phone: ${feature.properties.phone}</p>`
-          )
-      },
-      pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, {color: "#FF3961", radius: 2, fill: true})
-      }
-    })
-  ]).addTo(map) // add this to the initial map on load
-
-  // Indigenous Knowledge Centre locations from csv file
-  const ikcs = L.layerGroup([
-    L.geoCsv(data[2], {
-      firstLineTitles: true, 
-      fieldSeparator: ',',
-      onEachFeature: function (feature, layer) {
-        layer.bindPopup(
-          `<strong>${feature.properties.town}</strong>` + 
-          `<p>${feature.properties.address}<br/>` +
-          `phone: ${feature.properties.phone}</p>`
-        )
-      },
-      pointToLayer: function (feature, latlng) {
-        return L.circle(latlng, {color: "#76DBA7", radius: 800})
-      }
-    }),
-    L.geoCsv(data[2], {
-      firstLineTitles: true, 
-      fieldSeparator: ',',
-      onEachFeature: function (feature, layer) {
-        layer.bindPopup(
-          `<strong>${feature.properties.town}</strong>` + 
-          `<p>${feature.properties.address}<br/>` +
-          `phone: ${feature.properties.phone}</p>`
-        )
-      },
-      pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, {color: "#76DBA7", radius: 2, fill: true})
-      }
-    })
-  ]).addTo(map) // add this to the initial map on load
-
-  // mechanics institutes (Vic) & schools of arts (NSW) locations from csv file
-  const mechsAndSoA = L.layerGroup([
-    L.geoCsv(data[3], {
-      firstLineTitles: true, 
-      fieldSeparator: ',',
-      onEachFeature: function (feature, layer) {
-        layer.bindPopup(
-          `<strong>${feature.properties.town}</strong>` + 
-          `<p>${feature.properties.address}<br/>` +
-          `phone: ${feature.properties.phone}</p>`
-        )
-      },
-      pointToLayer: function (feature, latlng) {
-        return L.circle(latlng, {color: "rgb(255,165,0)", radius: 800})
-      }
-    }),
-    L.geoCsv(data[3], {
-      firstLineTitles: true, 
-      fieldSeparator: ',',
-      onEachFeature: function (feature, layer) {
-        layer.bindPopup(
-          `<strong>${feature.properties.town}</strong>` + 
-          `<p>${feature.properties.address}<br/>` +
-          `phone: ${feature.properties.phone}</p>`
-        )
-      },
-      pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, {color: "rgb(255,165,0)", radius: 2, fill: true})
-      }
-    })
-  ]).addTo(map) // add this to the initial map on load
-
-  // NSLA locations from csv file
-  const otherLibs = L.layerGroup([
-    L.geoCsv(data[4], {
-      firstLineTitles: true, 
-      fieldSeparator: ',',
-      onEachFeature: function (feature, layer) {
-        layer.bindPopup(
-          `<strong>${feature.properties.town}</strong>` + 
-          `<p>${feature.properties.address}<br/>` +
-          `phone: ${feature.properties.phone}</p>`
-        )
-      },
-      pointToLayer: function (feature, latlng) {
-        return L.circle(latlng, {color: "#75f857", radius: 800})
-      }
-    }),
-    L.geoCsv(data[4], {
-      firstLineTitles: true, 
-      fieldSeparator: ',',
-      onEachFeature: function (feature, layer) {
-        layer.bindPopup(
-          `<strong>${feature.properties.town}</strong>` + 
-          `<p>${feature.properties.address}<br/>` +
-          `phone: ${feature.properties.phone}</p>`
-        )
-      },
-      pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, {color: "#75f857", radius: 2, fill: true})
-      }
-    })
-  ]).addTo(map) // add this to the initial map on load
-
   // integrated library management software
   const ils = new L.TopoJSON(data[0], {
     style: function(feature){
@@ -318,12 +226,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   // change the branches overlay names depending on the mode.
   const modeButton = document.getElementById('mode-button');
 
-  var overlayMaps = {
-      "Settler Knowledge Centres" : branches,
-      "Indigenous Knowledge Centres": ikcs,
-      "Worker Pacification Centres" : mechsAndSoA,
-      "Imperial Knowledge Centres": otherLibs
-    }
+  var overlayMaps = {}
 
   function setGeneral() {
     overlayMaps = {
