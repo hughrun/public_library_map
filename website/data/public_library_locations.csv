@@ -582,7 +582,7 @@ lat,lng,town,address,phone
 -24.989775,151.953425,Gin Gin Library,4 Dear Street,07 4130 4620
 -35.9141537676707,145.688047184096,Barooga Library,4 Golf Course Road,03 5873 4701
 -19.295081,146.771859,CityLibraries Aitkenvale,4 Petunia Street,07 4727 8310
--31.9032,116.04843,Greenmount Public Library,4 Scott Street,9290 6755
+-31.917735,116.04747,Boya Public Library,"119-135 Scott Street, Helena Valley",9290 6755
 -37.88414449,145.0044487,Elsternwick,4 Staniland Grove Elsternwick 3185,9532 9321
 -42.834443,147.275185,Glenorchy,"4 Terry Street, Glenorchy",(03) 6165 5493
 -33.8681653057586,151.128829958828,Five Dock Library,4-12 Garfield Street,02 9911 6310
@@ -1441,3 +1441,4 @@ lat,lng,town,address,phone
 -33.4094787205636,151.36443967922,Wyoming Library,,
 -29.0299063295655,167.95930075762,Norfolk Island Library,"New Cascade Road, next to the Radio Station",+6723 22430
 -32.1510745129,116.014327017055,Armadale Public Library,"Shop 64, 10 Orchard Avenue, Armadale, WA 6112",08 9394 5125
+-31.98333,115.779953,Claremont Community Hub and Library,"327 Stirling Highway, Claremont",
