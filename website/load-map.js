@@ -27,22 +27,53 @@ function BaseMap(id) {
   })
 }
 
-function LocationsLayer(data, color) {
+function getIlsColor(f) {
+  return  f == 'AIT Aurora' ? '#d16a6e' :
+          f == 'Champ LMSi' ? '#ff00db' :
+          f == 'Civica Spydus' ? '#800080' :
+          f == 'DECD Bookmark' ? '#e1153e' :
+          f == 'Ex Libris Alma' ? '#ff6500' :
+          f == 'Ex Libris Voyager' ? 'yellow' :
+          f == 'Follett Destiny' ? '#df4917' :
+          f == 'Infor V-smart' ? '#e174c1' :
+          f == 'Innovative Sierra' ? '#ff0000' :
+          f == 'Koha ILS' ? '#2fbf2f' :
+          f == 'Libero' ? '#ffa500' :
+          f == 'Locally developed' ? '#bfdf17' :
+          f == 'OCLC Amlib' ? '#ddb372' :
+          f == 'OCLC WorldShare' ? '#2fbf97' :
+          f == 'SirsiDynix Horizon' ? '#ffff00' :
+          f == 'SirsiDynix Symphony' ? '#115583' :
+          f == 'Softlink Liberty' ? '#00f9ff' :
+          f == 'SumWare Athenaeum' ? '#ff3232' : '#bbb';
+}
+
+function LocationsLayer(data, color, outline, type) {
   this.data = data;
   this.color = color;
+  this.outline = outline;
+  this.type = type;
   return L.layerGroup([
     L.geoCsv(data, {
       firstLineTitles: true, 
       fieldSeparator: ',',
       onEachFeature: function (feature, layer) {
-        layer.bindPopup(
-          `<strong>${feature.properties.town}</strong>` + 
-          `<p>${feature.properties.address}<br/>` +
-          `phone: ${feature.properties.phone}</p>`
-          )
+        if (type === 'ils') {
+          layer.bindPopup(
+            `<strong>${feature.properties.town}</strong>` + 
+            `<p>${feature.properties.ils}</p>`
+            )
+        } else {
+          layer.bindPopup(
+            `<strong>${feature.properties.town}</strong>` + 
+            `<p>${feature.properties.address}<br/>` +
+            `phone: ${feature.properties.phone}</p>`
+            )
+        }
         },
       pointToLayer: function (f, latlng) {
-        return L.circle(latlng, {color: color, radius: 800}) // this is an 800m radius around the library
+        let col = type === 'ils' ? getIlsColor(f.properties.ils) : color;
+        return L.circle(latlng, {color: col, radius: outline}) // this is an 800m radius around the library
         }
     }),
     L.geoCsv(data, {
@@ -56,7 +87,8 @@ function LocationsLayer(data, color) {
           )
       },
       pointToLayer: function (f, latlng) {
-        return L.circleMarker(latlng, {color: color, radius: 2, fill: true})
+        let col = type === 'ils' ? getIlsColor(f.properties.ils) : color;
+        return L.circleMarker(latlng, {color: col, radius: 2, fill: true})
       }
     })
   ])
@@ -78,10 +110,11 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
     });
 
   // LOCATION LAYERS
-  const branches = new LocationsLayer(data[1], "#FF3961")
-  const ikcs = new LocationsLayer(data[2], "#76DBA7")
-  const mechsAndSoA = new LocationsLayer(data[3], "rgb(255,165,0)")
-  const otherLibs = new LocationsLayer(data[4], "#75f857")
+  const branches = new LocationsLayer(data[1], '#FF3961', 800)
+  const ikcs = new LocationsLayer(data[2], '#76DBA7', 800)
+  const mechsAndSoA = new LocationsLayer(data[3], 'rgb(255,165,0)', 800)
+  const otherLibs = new LocationsLayer(data[4], '#75f857', 800)
+  const nslaLibs = new LocationsLayer(data[4], '#FF3961', 20000, 'ils')
   // add to the initial map on load
   branches.addTo(map)
   ikcs.addTo(map)
@@ -111,8 +144,8 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
       return {
         fillColor: getFinesColor(feature.properties.fines),
         weight: 3,
-        color: "white",
-        dashArray: "4",
+        color: 'white',
+        dashArray: '4',
         fillOpacity: 0.2
       }
     },
@@ -177,10 +210,10 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
     style: function(feature){
       return {
         weight: 3,
-        color: "#fff",
-        dashArray: "4",
+        color: '#fff',
+        dashArray: '4',
         fillOpacity: 0.2,
-        fillColor: "#bbb",
+        fillColor: '#bbb',
         fillPattern: getLoanFillPattern(feature.properties.standard_loan_weeks)
       }
     },
@@ -199,8 +232,8 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
         return {
           fillColor: getIlsColor(feature.properties.ILS),
           weight: 3,
-          color: "white",
-          dashArray: "4",
+          color: 'white',
+          dashArray: '4',
           fillOpacity: 0.2
         }
       },
@@ -218,9 +251,9 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   // control layers
   // ++++++++++++++
   const baseMaps = {
-  "Libraries" : baseMap,
-  "Rules" : baseRules,
-  "Library Management Software" : baseIls
+  'Libraries' : baseMap,
+  'Rules' : baseRules,
+  'Library Management Software' : baseIls
   }
 
   // change the branches overlay names depending on the mode.
@@ -230,24 +263,24 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
 
   function setGeneral() {
     overlayMaps = {
-      "Settler Knowledge Centres" : branches,
-      "Indigenous Knowledge Centres" : ikcs,
-      "Mechanics Institutes" : mechsAndSoA,
-      "Colonial Knowledge Centres" : otherLibs
+      'Settler Knowledge Centres' : branches,
+      'Indigenous Knowledge Centres' : ikcs,
+      'Mechanics Institutes' : mechsAndSoA,
+      'Colonial Knowledge Centres' : otherLibs
     }
     modeButton.setAttribute('class', 'visible');
-    modeButton.innerText = "View in Colonial Mode";
+    modeButton.innerText = 'View in Colonial Mode';
   }
 
   function setColonial() {
     overlayMaps = {
-      "Public Libraries" : branches,
-      "Indigenous Knowledge Centres" : ikcs,
-      "Mechanics Institutes" : mechsAndSoA,
-      "National & State Libraries" : otherLibs
+      'Public Libraries' : branches,
+      'Indigenous Knowledge Centres' : ikcs,
+      'Mechanics Institutes' : mechsAndSoA,
+      'National & State Libraries' : otherLibs
       };
       modeButton.setAttribute('class', 'visible');
-      modeButton.innerText = "View in Standard Mode";
+      modeButton.innerText = 'View in Standard Mode';
   }
 
   if (sessionStorage.getItem('mapMode') === 'colonial') {
@@ -260,7 +293,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   var mapControl = L.control.layers(
     baseMaps, 
     overlayMaps, 
-    { "collapsed" : isSmallScreen }
+    { 'collapsed' : isSmallScreen }
   ).addTo(map);
 
   // scale
@@ -281,7 +314,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
       setGeneral()
       mapControl.remove();
       infoBoxes.branches.remove()
-      mapControl = L.control.layers(baseMaps, overlayMaps, {"collapsed": isSmallScreen}).addTo(map);
+      mapControl = L.control.layers(baseMaps, overlayMaps, {'collapsed': isSmallScreen}).addTo(map);
       if (!isSmallScreen) {
         infoBoxes.branches.addTo(map)
       }
@@ -290,7 +323,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
       setColonial()
       mapControl.remove();
       infoBoxes.branches.remove()
-      mapControl = L.control.layers(baseMaps, overlayMaps, {"collapsed": isSmallScreen}).addTo(map);
+      mapControl = L.control.layers(baseMaps, overlayMaps, {'collapsed': isSmallScreen}).addTo(map);
       if (!isSmallScreen) {
         infoBoxes.branches.addTo(map)
       }
@@ -307,32 +340,13 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
             f == 'no_unconfirmed' ? '#b8e186' : '#bbb';
   }
 
-  function getIlsColor(f) {
-    return  f == 'AIT Aurora' ? '#d16a6e' :
-            f == 'Champ LMSi' ? '#ff00db' :
-            f == 'Civica Spydus' ? '#800080' :
-            f == 'DECD Bookmark' ? '#e1153e' :
-            f == 'Follett Destiny' ? '#df4917' :
-            f == 'Infor V-smart' ? '#e174c1' :
-            f == 'Innovative Sierra' ? '#ff0000' :
-            f == 'Koha ILS' ? '#2fbf2f' :
-            f == 'Libero' ? '#ffa500' :
-            f == 'Locally developed' ? '#bfdf17' :
-            f == 'OCLC Amlib' ? '#ddb372' :
-            f == 'OCLC WorldShare' ? '#2fbf97' :
-            f == 'SirsiDynix Horizon' ? '#ffff00' :
-            f == 'SirsiDynix Symphony' ? '#115583' :
-            f == 'Softlink Liberty' ? '#00f9ff' :
-            f == 'SumWare Athenaeum' ? '#ff3232' : '#bbb';
-  }
-
   // highlight feature on mouse hover
   function highlightFeature(e) {
     const layer = e.target;
     layer.setStyle({
       weight: 6,
       color: '#FF3961',
-      dashArray: "0",
+      dashArray: '0',
       fillOpacity: 0
     });
 
@@ -351,18 +365,18 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
     <strong>${props.name}</strong>` + 
     `<p>Fines: ` + 
     (
-      props.fines === "no" ? "No" : 
-      props.fines == "no_unconfirmed" ? "Probably no" : 
-      props.fines === "yes" ? "Yes" : 
-      props.fines == "adults" ? "No for children" :
-      props.fines == "by_lga" ? "Varies by LGA" : "Unknown"
+      props.fines === 'no' ? 'No' : 
+      props.fines == 'no_unconfirmed' ? 'Probably no' : 
+      props.fines === 'yes' ? 'Yes' : 
+      props.fines == 'adults' ? 'No for children' :
+      props.fines == 'by_lga' ? 'Varies by LGA' : 'Unknown'
     ) + 
     `<br/>Loans : ` + 
-    (!props.standard_loan_weeks || props.standard_loan_weeks == "?" ? `Unknown` : `${props.standard_loan_weeks} weeks`) + 
+    (!props.standard_loan_weeks || props.standard_loan_weeks == '?' ? `Unknown` : `${props.standard_loan_weeks} weeks`) + 
     `<br/>Software : ` + 
-    (!props.ILS || props.ILS == "?" ? `Unknown` : `${props.ILS}`) + 
+    (!props.ILS || props.ILS == '?' ? `Unknown` : `${props.ILS}`) + 
     `<br/>Website: ` + 
-    (!props.website || props.website == "?" ? `Unknown` : `<a target="_blank" href="`+ `${props.website}` + `" >` + `${props.website}` + `</a>`) +
+    (!props.website || props.website == '?' ? `Unknown` : `<a target="_blank" href="`+ `${props.website}` + `" >` + `${props.website}` + `</a>`) +
     `</p>`
     ).openPopup()
   }
@@ -479,6 +493,12 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   // we remove info boxes before adding them again where relevant
   // this is so we don't accidentally stack up multiple copies dependng on user
   // navigation journey
+
+  var ilsMaps = {
+    "NSLA Libraries" : nslaLibs,
+    "Local Libraries" : ils
+  }
+
   map.on('baselayerchange', l => {
     for (let k in infoBoxes) {
         infoBoxes[k].remove()
@@ -493,7 +513,11 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
         mapControl.removeLayer(overlayMaps[i])
         overlayMaps[i].remove()
       }
-      ils.remove()
+      for (let i in ilsMaps ) {
+        mapControl.removeLayer(ilsMaps[i])
+        ilsMaps[i].remove()
+      }
+      // ils.remove()
       if (!isSmallScreen) { // only add infoboxes to larger screens
         infoBoxes.loanPeriod.addTo(map)
         infoBoxes.fines.addTo(map)
@@ -510,14 +534,24 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
       fines.remove()
       loanPeriod.remove()
       // add ILS layer
+      // TODO: here we add NSLA libraries
+      // mapControl.addOverlay(nslaLibs, "National/State libraries")
+      // mapControl.addOverlay(ils, "Local Libraries")
       ils.addTo(map)
+      nslaLibs.addTo(map)
+      for (let k in ilsMaps ) {
+        mapControl.addOverlay(ilsMaps[k], k)
+      }
     } else {
       // if 'Libraries' layer...
       mapControl.removeLayer(fines)
       mapControl.removeLayer(loanPeriod)
       fines.remove()
       loanPeriod.remove()
-      ils.remove()
+      for (let i in ilsMaps ) {
+        mapControl.removeLayer(ilsMaps[i])
+        ilsMaps[i].remove()
+      }
       branches.addTo(map)
       for (let k in overlayMaps ) {
         mapControl.addOverlay(overlayMaps[k], k)
