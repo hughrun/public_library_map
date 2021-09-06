@@ -32,11 +32,11 @@ If you are adding a lot of data and have a new source for it, make sure it is ci
 
 ### Missing or inaccurate data
 
-Currently we're missing data for some library services in relation to **standard loan periods** and **fines for overdue items**.
+Currently we're missing data for some library services in relation to **standard loan periods** and **fines for overdue items**. Any acurate and specific information about fines for South and Western Australia would be particularly helpful.
 
 It's likely that some **library location data** is inaccurate &mdash; especially for New South Wales. It's also possible that the address data is wrong (even though the location shown may be correct), and in some cases it is missing.
 
-It's possible that some of the **fines data for Queensland** is a little off. This came from the State Library of Queensland but I know for a fact that some of the data was wrong (e.g. Gold Coast Libraries does not charge overdue fines, but the SLQ reports says it does).
+It's possible that some of the **fines data for Queensland** is a little off. This came from the State Library of Queensland but some of the data was wrong (e.g. Gold Coast Libraries does not charge overdue fines, but the SLQ report says it does).
 
 I am particularly interested if you know of data sources for entire regions, states, or Australia &mdash; especially if they're reliably kept up to date.
 
