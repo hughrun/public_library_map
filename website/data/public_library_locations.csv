@@ -1,5 +1,5 @@
 lat,lng,town,address,phone
--15.92221,145.352361,Bloomfield Library,-,07 4060 8342
+-15.92221,145.352361,Bloomfield Library,"24 Third Street, Ayton",07 4060 8342
 -19.258704,146.817816,CityLibraries Home Service,-,07 4727 8324
 -19.258638,146.817738,CityLibraries Mobile Library,-,07 4727 8324
 -28.077641,153.385599,Gold Coast Mobile Library,-,07 5581 7272
@@ -1388,56 +1388,56 @@ lat,lng,town,address,phone
 -32.4116091266438,152.20864207927,Bulahdelah Library,"Wade Park, 67 Crawford St",
 -34.3381837067344,150.909310851924,Bulli Library,330 Princes St,
 -30.170944295831,151.076555040406,Bundarra Library,2 Court St,
--32.0051714182859,149.981047484353,Cassilis Library,,
--33.8040537393578,151.212326902928,Castlecrag Library,,
--33.9653355461539,151.132969632813,Clive James Library And Service Centre,,
--28.9911966371825,153.286187308279,Coraki Library,,
--31.117205120077,150.267008829246,Curlewis Library,,
--28.9276441983256,152.375745973363,Drake Library,,
--33.8512736183131,151.152901121757,Drummoyne Library,,
--33.7527203977076,150.661894422836,Emu Plains Library,,
--33.1113396296785,146.472110423858,Euabalong Library,,
--34.7462959040259,150.827626011873,Gerringong Library,,
--31.9146785636161,152.459566723292,Greater Taree City Library,,
--33.9995377989886,150.867908873105,Greg Percival Library Ingleburn,,
--31.3294590836583,148.471550892134,Gulargambone Library,,
--33.1384740628606,151.586643148027,Gwandalan Library,,
--33.7785647612552,151.283708042416,Harbord Community Library,,
--33.8894087817014,151.082311359407,High Street Community Library,,
--33.4851093950621,145.531452668834,Hillston Library,,
--34.070297671864,150.806558840407,HJ Daley Library Campbelltown,,
--33.8691462071915,151.083518260364,Homebush Library,,
--33.7537922204964,151.15237388794,Ku-ring-gai Gordon Library,,
+-32.0051714182859,149.981047484353,Cassilis Library,Buccleugh Street,02 6376 1295
+-33.8040537393578,151.212326902928,Castlecrag Library,"The Rampart, Castlecrag",02 9958 8395
+-33.9653355461539,151.132969632813,Clive James Library And Service Centre,"Kogarah Town Square, Belgrave Street, Kogarah",02 9330 6400
+-28.9911966371825,153.286187308279,Coraki Library,"Adams Street, Coraki",02 6683 2752
+-31.117205120077,150.267008829246,Curlewis Library,38 Goran Street,
+-28.9276441983256,152.375745973363,Drake Library,"Drake Public School, Allison Street, Drake",02 6737 6677 
+-33.8512736183131,151.152901121757,Drummoyne Library,1A Marlborough Street,02 9911 6555
+-33.7527203977076,150.661894422836,Emu Plains Library,Corner of Lawson Street and Great Western Highway,02 4735 5577
+-33.1113396296785,146.472110423858,Euabalong Library,Old School Building Lachlan Street,02 6896 6707
+-34.7462959040259,150.827626011873,Gerringong Library,"Gerringong Town Hall, 106 Fern Street",02 4234 2302
+-31.9146785636161,152.459566723292,Taree Library,242 Victoria Street,02 6592 5290
+-33.9995377989886,150.867908873105,Greg Percival Library Ingleburn,"Cnr Oxford Rd & Cumberland Rd, Ingleburn ",02 4645 4060
+-31.3294590836583,148.471550892134,Gulargambone Library,Bourbah Street,02 68472460
+-33.1384740628606,151.586643148027,Gwandalan Library,"Community Hall, Koowong Road",02  4976 2587
+-33.7785647612552,151.283708042416,Harbord Community Library,"31 Lawrence Street, Freshwater",02 9905 4824
+-33.8894087817014,151.082311359407,High Street Community Centre,"64 High Street, Strathfield",
+-33.4851093950621,145.531452668834,W.G. Parker Memorial Library,"High Street, Hillston ",02 69672503
+-34.070297671864,150.806558840407,HJ Daley Library Campbelltown,"1 Hurley Street, Campbelltown ",02 4645 4444
+-33.8691462071915,151.083518260364,Strathfield Library and Innovation Hub ,"65 Rochester Street, Homebush",02 8762 0222
+-33.7537922204964,151.15237388794,Gordon Library,799 Pacific Highway,02 9424 0120
 -33.8680217924821,151.192177346152,Library Link Pyrmont,,
 -33.87298447583,151.205292751097,Library Link Town Hall,,
--32.244508997592,148.601460113754,Macquarie Regional Library,,
--33.9147828594165,151.240501874604,Margaret Martin Library,,
--31.8228774607441,149.121851446728,Mendooran Library,,
+-32.244508997592,148.601460113754,Dubbo Library,Cnr Macquarie and Talbragar Street ,02 6801 4510
+-33.9147828594165,151.240501874604,Margaret Martin Library,"Royal Randwick Shopping Centre, Randwick",02 9093 6100
+-31.8228774607441,149.121851446728,Mendooran Library,57 Bandulla Street ,02 6886 1657
 -36.8908724648702,149.910288992342,Merimbula Library,,
 -34.0272723615804,150.850836678591,Minto Community Library,,
 -33.70938,120.86362,Munglinup Public Library,,9075 1174
 -34.9678894917262,149.030075514884,Murrumbateman Library,,
--32.1005162605594,152.382295281079,Nabiac Branch Library,,
--33.8159651920699,151.201699369586,Naremburn Library,,
+-32.1005162605594,152.382295281079,Nabiac Branch Library,44 Nabiac Street,02 6554 1355
+-33.8159651920699,151.201699369586,Naremburn Library,7 Central Street,9439 5584
 -33.3826299423218,151.352878108189,Niagara Library,,
--32.0652560694402,146.314801452399,Nymagee Library,,
--31.5633758747158,147.193440774256,Nyngan Library,,
--31.9691775256765,152.584551681459,Old Bar Community Library,,
--33.8163543543047,151.00470094421,Parramatta Central Library,,
--32.724946061723,148.19150482403,Peak Hill Library,,
--33.3856612287792,142.569856491465,Pooncarie Library,,
+-32.0652560694402,146.314801452399,Nymagee Library,"Old School Community Centre, Austral Street",
+-31.5633758747158,147.193440774256,Nyngan Library,73 Cobar Street,02 6835 9080
+-31.9691775256765,152.584551681459,Old Bar Community Library,3/50 Old Bar Road,02 6553 6535
+-33.818534,151.0034836,Parramatta Library,1-3 Fitzwilliam St ,02 9806 5159
+-32.724946061723,148.19150482403,Peak Hill Library,Caswell Street,02 6861 2309
+-33.3856612287792,142.569856491465,Pooncarie Library,"Pooncarie Mail Centre, Tarcoola Street",03 5029 5318
 -31.4541947981419,149.901310975169,Premer Library,,
--33.6906050818926,150.926280158795,Rouse Hill Library,,
--33.4839307309641,150.031844905898,Rydal Library,,
--33.6823083631864,151.22728597423,Terrey Hills Community Library,,
--33.8927089695094,150.938999651041,The Whitlam Library Cabramatta,,
--32.7321581124585,152.033513882392,Tilligerry Library,,
--30.3550887328219,153.091502404984,Toormina Library,,
--33.0146246251264,151.596283129241,Toronto Library,,
--32.2457415269945,147.353105434715,Tottenham Library,,
--32.9241455746665,147.710926639395,Trundle Library,,
--32.6320385435909,147.568176211893,Tullamore Library,,
--28.4728129219793,152.548599032274,Urbenville Library,,
--33.924510947019,147.203855188584,West Wyalong Library,,
--33.6093750931183,150.817833456299,Windsor Library,,
+-33.690674,150.926378,Vinegar Hill Memorial Library,"29 Main Street, Rouse Hill Town Centre",02 9761 4520 
+-33.4839307309641,150.031844905898,Rydal Library,Bathurst Street,02 6355 6328 
+-33.6823083631864,151.22728597423,Terrey Hills Community Library,"Booralie Road, adjacent to Frank Beckman Reserve",02 9450 2216
+-33.8927089695094,150.938999651041,The Whitlam Library Cabramatta,165 Railway Parade,02 9725 0333
+-32.7321581124585,152.033513882392,Tilligerry Library,46 Meredith Ave Lemon Tree Passage,02 4982 3477
+-30.3550887328219,153.091502404984,Toormina Library,Minorie Drive,02 6648 4925
+-33.0146246251264,151.596283129241,Toronto Library,Corner Brighton Avenue and Pemell Street,
+-32.2457415269945,147.353105434715,Tottenham Library,Tottenham Central School Merilba Street ,
+-32.9241455746665,147.710926639395,Trundle Library,Forbes Street,02 6892 1569
+-32.6320385435909,147.568176211893,Tullamore Library,Cnr Carey Street and Haylock Street,02 6892 5115
+-28.4728129219793,152.548599032274,Urbenville Library,"Urbenville Hall, 7 Beaury Street,",02 6634 1467
+-33.924510947019,147.203855188584,Bland Shire Library,"6 Shire St, West Wyalong",02 6979 0272
+-33.6093750931183,150.817833456299,Hawkesbury Central Library ,"300 George Street, Windsor",02 4560 4460 
 -33.4094787205636,151.36443967922,Wyoming Library,,
