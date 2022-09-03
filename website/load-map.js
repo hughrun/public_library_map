@@ -36,6 +36,7 @@ function getIlsColor(f) {
           f == 'Ex Libris Voyager' ? 'yellow' :
           f == 'Follett Destiny' ? '#df4917' :
           f == 'Infor V-smart' ? '#e174c1' :
+          f == 'Innovative Polaris' ? '#8e7cc3' :
           f == 'Innovative Sierra' ? '#ff0000' :
           f == 'Koha ILS' ? '#2fbf2f' :
           f == 'Libero' ? '#ffa500' :
@@ -55,17 +56,17 @@ function LocationsLayer(data, color, outline, type) {
   this.type = type;
   return L.layerGroup([
     L.geoCsv(data, {
-      firstLineTitles: true, 
+      firstLineTitles: true,
       fieldSeparator: ',',
       onEachFeature: function (feature, layer) {
         if (type === 'ils') {
           layer.bindPopup(
-            `<strong>${feature.properties.town}</strong>` + 
+            `<strong>${feature.properties.town}</strong>` +
             `<p>${feature.properties.ils}</p>`
             )
         } else {
           layer.bindPopup(
-            `<strong>${feature.properties.town}</strong>` + 
+            `<strong>${feature.properties.town}</strong>` +
             `<p>${feature.properties.address}<br/>` +
             `phone: ${feature.properties.phone}</p>`
             )
@@ -77,11 +78,11 @@ function LocationsLayer(data, color, outline, type) {
         }
     }),
     L.geoCsv(data, {
-      firstLineTitles: true, 
+      firstLineTitles: true,
       fieldSeparator: ',',
       onEachFeature: function (feature, layer) {
         layer.bindPopup(
-          `<strong>${feature.properties.town}</strong>` + 
+          `<strong>${feature.properties.town}</strong>` +
           `<p>${feature.properties.address}<br/>` +
           `phone: ${feature.properties.phone}</p>`
           )
@@ -179,7 +180,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
 
   const loanThree = new L.StripePattern({
   color: '#000'
-  }); 
+  });
   loanThree.addTo(map);
 
   const loanFour = new L.StripePattern({
@@ -187,7 +188,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   weight: 6,
   spaceWeight: 2,
   angle: 45
-  }); 
+  });
   loanFour.addTo(map);
 
   const loanSix = new L.StripePattern({
@@ -195,7 +196,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
     weight: 2,
     spaceWeight: 6,
     angle: 135
-    }); 
+    });
     loanSix.addTo(map);
 
   function getLoanFillPattern(w) {
@@ -291,8 +292,8 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
 
   // add control layers
   var mapControl = L.control.layers(
-    baseMaps, 
-    overlayMaps, 
+    baseMaps,
+    overlayMaps,
     { 'collapsed' : isSmallScreen }
   ).addTo(map);
 
@@ -362,20 +363,20 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   function zoomToFeature(e, props) {
     map.fitBounds(e.target.getBounds());
     e.target.bindPopup(`
-    <strong>${props.name}</strong>` + 
-    `<p>Fines: ` + 
+    <strong>${props.name}</strong>` +
+    `<p>Fines: ` +
     (
-      props.fines === 'no' ? 'No' : 
-      props.fines == 'no_unconfirmed' ? 'Probably no' : 
-      props.fines === 'yes' ? 'Yes' : 
+      props.fines === 'no' ? 'No' :
+      props.fines == 'no_unconfirmed' ? 'Probably no' :
+      props.fines === 'yes' ? 'Yes' :
       props.fines == 'adults' ? 'No for children' :
       props.fines == 'by_lga' ? 'Varies by LGA' : 'Unknown'
-    ) + 
-    `<br/>Loans : ` + 
-    (!props.standard_loan_weeks || props.standard_loan_weeks == '?' ? `Unknown` : `${props.standard_loan_weeks} weeks`) + 
-    `<br/>Software : ` + 
-    (!props.ILS || props.ILS == '?' ? `Unknown` : `${props.ILS}`) + 
-    `<br/>Website: ` + 
+    ) +
+    `<br/>Loans : ` +
+    (!props.standard_loan_weeks || props.standard_loan_weeks == '?' ? `Unknown` : `${props.standard_loan_weeks} weeks`) +
+    `<br/>Software : ` +
+    (!props.ILS || props.ILS == '?' ? `Unknown` : `${props.ILS}`) +
+    `<br/>Website: ` +
     (!props.website || props.website == '?' ? `Unknown` : `<a target="_blank" href="`+ `${props.website}` + `" >` + `${props.website}` + `</a>`) +
     `</p>`
     ).openPopup()
@@ -397,7 +398,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   // FINES LEGEND
   infoBoxes.fines.onAdd = addLegend;
   infoBoxes.fines.update = function (props) {
-  this._div.innerHTML =  
+  this._div.innerHTML =
     `<p>Hover over an area for more information</p>
     <section>
       <div><div class="circle" style="background-color: #4dac26"></div>Fine free</div>
@@ -426,7 +427,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   infoBoxes.loanPeriod.update = function (props) {
   this._div.innerHTML = `
   <section>
-  <div><div class="circle" style="background: 
+  <div><div class="circle" style="background:
   radial-gradient(4px 4px at 6px 6px, #3a3a3a 50%, transparent 75%),
   radial-gradient(4px 4px at 16px 6px, #3a3a3a 50%, transparent 75%),
   radial-gradient(4px 4px at 2px 12px, #3a3a3a 50%, transparent 75%),
@@ -467,16 +468,16 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   infoBoxes.serviceInfo.update = function(props) {
     if (props) {
     this._div.innerHTML = `<h4>${props.name}</h4>` +
-    '<section><p>' + 
+    '<section><p>' +
     (
-      props.fines === "no" ? "Fine free for overdue items" : 
-      props.fines == "no_unconfirmed" ? "Probably no overdue fines" : 
-      props.fines === "yes" ? "Overdue fines for all users" : 
+      props.fines === "no" ? "Fine free for overdue items" :
+      props.fines == "no_unconfirmed" ? "Probably no overdue fines" :
+      props.fines === "yes" ? "Overdue fines for all users" :
       props.fines == "adults" ? "No overdue fines for children" :
       props.fines == "by_lga" ? "Fine policy varies" : "No fines data"
     ) + '<br/>' +
     (!props.standard_loan_weeks || props.standard_loan_weeks == "?" ? `No loan period data` : `${props.standard_loan_weeks} week loans`) +
-      `<br/>Software: ` + 
+      `<br/>Software: ` +
       (!props.ILS || props.ILS == "?" ? `Unknown` : `${props.ILS}`) +
     '</p></section>'
     }
