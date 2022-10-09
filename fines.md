@@ -9,7 +9,7 @@ There have been few studies on the effectiveness of library fines in the last de
 
 So the onus should be on those arguing to retain fines to prove that _fining people for returning items late actually works_ as an effective incentive for timely return of items compared to other less punitive approaches.
 
-"Removing overdue fines" does not equal "No consequences for returning items late or not returning them at all". Equally, "Fining for overdues" does not equal "All items are eventually returned". 
+"Removing overdue fines" does not equal "No consequences for returning items late or not returning them at all". Equally, "Fining for overdues" does not equal "All items are eventually returned".
 
 Every library, regardless of whether they impose fines or not, has a level of "shrinkage" in the collection that has to eventually be written off. Typically libraries that have removed fines (and indeed also those that haven't) use some or all of the following techniques to get things flowing through the system:
 
@@ -17,8 +17,8 @@ Every library, regardless of whether they impose fines or not, has a level of "s
 * limits on total loans so that people can't take out hundreds of items and disappear;
 * restrictions on new borrowing if any items are overdue;
 * restrictions on use of all library services (e.g. WiFi, PCs, placing a hold on an item) if any items are overdue;
-* items declared lost and a "lost item" invoice sent after they are due for a certain number of days (typically 60, sometimes as low as 30)
-* incentives such as increased borrowing or reservation limits for borrowers who do not have any overdues for a certain period of time (e.g. in the previous year)
+* items declared lost and a "lost item" invoice sent after they are due for a certain number of days (typically 60, sometimes as low as 30);
+* incentives such as increased borrowing or reservation limits for borrowers who do not have any overdues for a certain period of time (e.g. in the previous year).
 
 ### Further reading
 
