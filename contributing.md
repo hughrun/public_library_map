@@ -17,14 +17,14 @@ There is a class outline for an [introduction to Git and GitHub aimed at librari
 
 To update information about library *services* (e.g. fines info, loan period etc) you should edit `website/data/library_services_information.csv`.
 
-After your Pull Request is merged, a script will automatically merge data from `website/data/library_services_information.csv` into `website/data/boundaries.topo.json`. Please do not edit the `topo.json` file directly.
-
 To update information about library *locations* (e.g. street address, phone number, coordinates) you should edit the relevant csv location file:
 
 * `website/data/indigenous_knowledge_centre_locations.csv`
 * `website/data/mechanics_institute_locations.csv`
 * `website/data/nsla_library_locations.csv`
 * `website/data/public_library_locations.csv`
+
+After your Pull Request is merged, a script will automatically merge data from `website/data/library_services_information.csv` into `website/data/boundaries.topo.json`. Please do not edit the `topo.json` file directly.
 
 ### Citing and crediting data sources
 
