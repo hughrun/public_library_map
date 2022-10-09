@@ -1,11 +1,11 @@
 ## About Library Map
 
-This project collects and maps data from public libraries across the Australia and the external Australian Territories of Christmas Island and the Cocos (Keeling) Islands. In the long term I hope to include more data that can be combined and cross-referenced, e.g. library funding from local and state governments, HILDA data etc.
+This project maps data from public libraries across the Australia and the external Australian Territories of Christmas Island and the Cocos (Keeling) Islands. In the long term I hope to include more data that can be combined and cross-referenced, e.g. library funding from local and state governments, HILDA data etc.
 
 You should be able to find:
 
-* the location of every public library in Australia territory, plus 
-* the standard loan period for each libary service, and 
+* the location of every public library in Australia territory, plus
+* the standard loan period for each libary service, and
 * whether they charge overdue fines, and
 * which integrated library system (ILS/LMS) each library service uses
 
