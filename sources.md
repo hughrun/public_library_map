@@ -20,13 +20,11 @@ See [contributors](contributors.txt).
 
 ### Library services
 
-The library service boundaries are derived from local government boundary data care of PSMA and accessed from [data.gov.au](https://data.gov.au). 
+The library service boundaries are derived from local government boundary data care of PSMA and accessed from [data.gov.au](https://data.gov.au).
 
 Data about fines and lending periods is a mix of original research, plus data provided by State Libraries and Public Libraries Victoria.
 
-Data about language holdings (TODO) provided by various sources.
-
-Data about Integrated Library Systems (ILS) (TODO - almost done) is mostly original research, with some data from State Library of Queensland, and some checked at Marshall Breeding's [librarytechnology.org](http://librarytechnology.org) site.
+Data about Integrated Library Systems (ILS) is mostly original research, with some data from State Library of Queensland, and some checked at Marshall Breeding's [librarytechnology.org](http://librarytechnology.org) site.
 
 | Source  | Link  | License |
 |---      |---    |      ---|
