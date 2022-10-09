@@ -17,7 +17,7 @@ There is a class outline for an [introduction to Git and GitHub aimed at librari
 
 To update information about library *services* (e.g. fines info, loan period etc) you should edit `website/data/library_services_information.csv`.
 
-After your Pull Request is merged, a GitHub Action will automatically create a second pull request that merges data from `website/data/library_services_information.csv` into `website/data/boundaries.topo.json`. Please do not edit the `topo.json` file directly.
+After your Pull Request is merged, a script will automatically merge data from `website/data/library_services_information.csv` into `website/data/boundaries.topo.json`. Please do not edit the `topo.json` file directly.
 
 To update information about library *locations* (e.g. street address, phone number, coordinates) you should edit the relevant csv location file:
 
