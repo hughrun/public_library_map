@@ -41,7 +41,6 @@
         <p>There is a class outline for an <a href="https://librarycarpentry.org/lc-git/">introduction to Git and GitHub aimed at librarians</a> at <code>librarycarpentry.org</code>. This assumes you are using the command line. If you create or already have a GitHub account, you can also <a href="https://docs.github.com/en/github/managing-files-in-a-repository/editing-files-in-another-users-repository">edit files directly in the browser</a>, or use <a href="https://desktop.github.com/">GitHub Desktop</a> - both of which are probably less intimidating options if you don’t have any desire to learn how to use a command line/shell interface, or just want to make a single minor update.</p>
         <h3 id="which-files-to-update">Which files to update</h3>
         <p>To update information about library <em>services</em> (e.g. fines info, loan period etc) you should edit <code>website/data/library_services_information.csv</code>.</p>
-        <p>After your Pull Request is merged, a GitHub Action will automatically create a second pull request that merges data from <code>website/data/library_services_information.csv</code> into <code>website/data/boundaries.topo.json</code>. Please do not edit the <code>topo.json</code> file directly.</p>
         <p>To update information about library <em>locations</em> (e.g. street address, phone number, coordinates) you should edit the relevant csv location file:</p>
         <ul>
         <li><code>website/data/indigenous_knowledge_centre_locations.csv</code></li>
@@ -49,6 +48,8 @@
         <li><code>website/data/nsla_library_locations.csv</code></li>
         <li><code>website/data/public_library_locations.csv</code></li>
         </ul>
+        <p>After your Pull Request is merged, a script will automatically merge data from <code>website/data/library_services_information.csv</code> into <code>website/data/boundaries.topo.json</code>. Please do not edit the <code>topo.json</code> file directly.</p>
+
         <h3 id="citing-and-crediting-data-sources">Citing and crediting data sources</h3>
         <p>If you are adding a lot of data and have a new source for it, make sure it is cited. You should update the list of sources at both <code>sources.md</code> <em>and</em> <code>website/sources/index.html</code>. If your source is “I just know because it’s my local library” or “I looked it up on their website” you don’t need to add that to the list of sources. If your source is “I found a PDF listing every public library on the State Library website”, you do.</p>
         <h3 id="missing-or-inaccurate-data">Missing or inaccurate data</h3>
