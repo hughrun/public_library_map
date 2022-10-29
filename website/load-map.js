@@ -13,6 +13,9 @@ const mechanics = fetch('data/mechanics_institute_locations.csv')
 const nslaBranches = fetch('data/nsla_library_locations.csv')
 .then( response => response.text());
 
+const caul = fetch('data/academic_library_locations.csv')
+.then( response => response.text());
+
 var isSmallScreen = window.screen.availWidth < 800;
 
 function BaseMap(id) {
@@ -62,7 +65,8 @@ function LocationsLayer(data, color, outline, type) {
         if (type === 'ils') {
           layer.bindPopup(
             `<strong>${feature.properties.town}</strong>` +
-            `<p>${feature.properties.ils}</p>`
+            `<p>${feature.properties.ils}</p>` +
+            `<p>${feature.properties.discovery}</p>`
             )
         } else {
           layer.bindPopup(
@@ -96,7 +100,7 @@ function LocationsLayer(data, color, outline, type) {
 }
 
 
-Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
+Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches, caul])
 .then( data => {
   // add tile layers for each base map
   const baseMap = new BaseMap('mapbox/dark-v10')
@@ -116,6 +120,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   const mechsAndSoA = new LocationsLayer(data[3], 'rgb(255,165,0)', 800)
   const otherLibs = new LocationsLayer(data[4], '#75f857', 800)
   const nslaLibs = new LocationsLayer(data[4], '#FF3961', 20000, 'ils')
+  const academicLibs = new LocationsLayer(data[5], '#0073A1', 1000, 'ils')
   // add to the initial map on load
   branches.addTo(map)
   ikcs.addTo(map)
@@ -496,6 +501,7 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
   // navigation journey
 
   var ilsMaps = {
+    "Academic Libraries": academicLibs,
     "NSLA Libraries" : nslaLibs,
     "Local Libraries" : ils
   }
@@ -535,11 +541,9 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches])
       fines.remove()
       loanPeriod.remove()
       // add ILS layer
-      // TODO: here we add NSLA libraries
-      // mapControl.addOverlay(nslaLibs, "National/State libraries")
-      // mapControl.addOverlay(ils, "Local Libraries")
       ils.addTo(map)
       nslaLibs.addTo(map)
+      academicLibs.addTo(map)
       for (let k in ilsMaps ) {
         mapControl.addOverlay(ilsMaps[k], k)
       }
