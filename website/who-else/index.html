@@ -117,7 +117,7 @@
               for (let lib of libraries) {
               const li = document.createElement('li')
               if (lib.url) {
-                li.innerHTML = `<a href="${lib.url}">${lib.name}</a>`
+                li.innerHTML = `<a target="_blank" href="${lib.url}" rel="noopener noreferrer">${lib.name}</a>`
               } else {
                 li.innerText = lib.name
               }
