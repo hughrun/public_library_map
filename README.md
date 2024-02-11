@@ -14,7 +14,7 @@ See [sources](sources.md).
 
 ## Want to help?
 
-See [contributing](contributing.md), especially *[which files to update](https://github.com/hughrun/public_library_map/blob/master/contributing.md#which-files-to-update)*.
+See [contributing](https://librarymap.hugh.run/contributing/), especially *[which files to update](https://librarymap.hugh.run/contributing/#which-files-to-update)*.
 
 ## Contributors
 

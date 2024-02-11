@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Who's using it - Library Map</title>
+    <link rel="shortcut icon" href="/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+  <body>
+    <header>
+      <section id="title">
+        <a href="/"><img id="logo" src="/logo.svg"></a>
+        <h2>Who's using it?</h2>
+      </section>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li class="active-tab">Who's using it?</li>
+          <li><a href="/fines">Fines</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/sources">Acknowledgements</a></li>
+          <li><a href="/contributing">Contribute</a></li>
+          <li><a href="https://github.com/hughrun/public_library_map">Code</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="who-else">
+        <h2>Who's using it?</h2>
+        <p>Maps are nice but sometimes you just want a list, right?</p>
+        <p>Search by ILS, Discovery Platform, or both together.</p>
+
+        <script src="/d3.js"></script>
+        <script type="module">
+          // load the data
+          const local = await d3.dsv( ',', '/data/library_services_information.csv', (d) => {
+            return {
+              name: d.long_name,
+              ils: d.ILS,
+              state: d.state.toUpperCase(),
+              url: d.website
+            }
+          });
+          const nsla = await d3.dsv(',', '/data/nsla_library_locations.csv', (d) => {
+            return {
+              name: d.town,
+              ils: d.ils,
+            }
+          });
+          const academic = await d3.dsv(',', '/data/academic_library_locations.csv', (d) => {
+            return {
+              name: d.town,
+              ils: d.ils,
+              discovery: d.discovery
+            }
+            });
+
+          const data = [...local, ...nsla, ...academic]
+
+          const ils_systems = []
+          const disc_systems = []
+          for (let d of data) {
+            ils_systems.push(d.ils)
+            disc_systems.push(d.discovery)
+          }
+          const values = new Set(ils_systems.sort())
+          ils = document.getElementById('ils')
+          for (let val of values) {
+              const option = document.createElement('option')
+              option.innerText = val
+              ils.appendChild(option)
+          }
+
+          const discoveries = new Set(disc_systems.sort())
+          discovery = document.getElementById('discovery')
+          for (let val of discoveries) {
+            if (val) {
+              const option = document.createElement('option')
+              option.innerText = val
+              discovery.appendChild(option)
+            }
+          }
+
+          // watch for a query
+          form = document.getElementById('form')
+
+          form.addEventListener('submit', (event) => {
+              event.preventDefault()
+              let listing = document.getElementById('libraries')
+              // clear
+              while (listing.firstChild) {
+                listing.removeChild(listing.firstChild);
+              }
+
+              let ils = event.target.ils.value == "---" ? null : event.target.ils.value
+              let discovery = event.target.discovery.value == "---" ? null : event.target.discovery.value
+
+              var libraries = []
+              if (ils && !discovery) {
+                console.log("ils only")
+                libraries = data.filter( (lib) => lib.ils == ils).sort( (a,b) => {
+                  return (a.name < b.name) ? -1 : (a.name > b.name) ? 1 : 0;
+                })
+              } else if (discovery && !ils) {
+                console.log("discovery only")
+                libraries = data.filter( (lib) => lib.discovery == discovery).sort( (a,b) => {
+                  return (a.name < b.name) ? -1 : (a.name > b.name) ? 1 : 0;
+                })
+              } else {
+                console.log("both")
+                let ils_libs = data.filter( (lib) => lib.ils == ils)
+                libraries = ils_libs.filter( (lib) => lib.discovery == discovery).sort( (a,b) => {
+                  return (a.name < b.name) ? -1 : (a.name > b.name) ? 1 : 0;
+                })
+              }
+
+              // account for no disovery listed or neither
+              console.log(libraries)
+              for (let lib of libraries) {
+              const li = document.createElement('li')
+              if (lib.url) {
+                li.innerHTML = `<a href="${lib.url}">${lib.name}</a>`
+              } else {
+                li.innerText = lib.name
+              }
+              if (lib.state) {
+                li.innerHTML += ` (${lib.state})`
+              }
+
+              listing.appendChild(li)
+          }
+          })
+
+        </script>
+
+        <form id="form">
+          <label for="ils">Integrated Library System (ILS/LMS)</label>
+          <select name="ils" id="ils">
+            <option selected>---</option>
+          </select><br/>
+          <label for="ils">Discovery Platform</label>
+          <select name="discovery" id="discovery">
+            <option selected>---</option>
+          </select><br/>
+          <button>Find out who's using it!</button>
+        </form>
+        <ul id="libraries"></ul>
+      </section>
+    </main>
+    <footer>
+      <p>This website and the data it uses licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a></p>
+    </footer>
+  </body>
+</html>
