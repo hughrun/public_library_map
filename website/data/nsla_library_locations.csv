@@ -1,10 +1,10 @@
-lat,lng,town,address,phone,ils
--37.809815,144.96513,State Library of Victoria,"328 Swanston Street, Melbourne",03 8664 7000,Ex Libris Alma
--35.2964664654173,149.129530279015,National Library of Australia,"Parkes Place, Canberra",02 6262 1111,Ex Libris Voyager
--33.8658844393665,151.213300984753,State Library of New South Wales,"Macquarie Street, Sydney",02 9273 1414,Ex Libris Alma
--27.4709532627151,153.018134355766,State Library of Queensland,"Stanley Place, South Brisbane",07 3840 7666,Ex Libris Alma
--34.9203274502345,138.602616669435,State Library of South Australia,"North Terrace & Kintore Ave, Adelaide",08 8207 7250,Innovative Sierra
--31.9490538016994,115.860634584705,State Library of Western Australia,"25 Francis St, Perth",08 9427 3111,Innovative Sierra
--42.8815965006531,147.325005456166,Hobart Reading Room (State Reference Library),"91 Murray Street, Hobart",03 6165 5597,SirsiDynix Symphony
--12.4666020117882,130.842962053658,Northern Territory Library,"4 Bennett St, Parliament House, Darwin",08 8999 7177,OCLC WorldShare
--35.3241714564223,149.164639259617,ACT Heritage Library,"255 Canberra Ave, Fyshwick",02 6207 5163,Civica Spydus
+lat,lng,town,address,phone,ils,url
+-37.809815,144.96513,State Library of Victoria,"328 Swanston Street, Melbourne",03 8664 7000,Ex Libris Alma,https://www.slv.vic.gov.au/
+-35.2964664654173,149.129530279015,National Library of Australia,"Parkes Place, Canberra",02 6262 1111,FOLIO,https://www.nla.gov.au/
+-33.8658844393665,151.213300984753,State Library of New South Wales,"Macquarie Street, Sydney",02 9273 1414,Ex Libris Alma,https://www.sl.nsw.gov.au/
+-27.4709532627151,153.018134355766,State Library of Queensland,"Stanley Place, South Brisbane",07 3840 7666,Ex Libris Alma,https://www.slq.qld.gov.au/
+-34.9203274502345,138.602616669435,State Library of South Australia,"North Terrace & Kintore Ave, Adelaide",08 8207 7250,Innovative Sierra,https://www.slsa.sa.gov.au
+-31.9490538016994,115.860634584705,State Library of Western Australia,"25 Francis St, Perth",08 9427 3111,Innovative Sierra,https://slwa.wa.gov.au/
+-42.8815965006531,147.325005456166,Hobart Reading Room (State Reference Library),"91 Murray Street, Hobart",03 6165 5597,SirsiDynix Symphony,https://libraries.tas.gov.au/state-library-of-tasmania/
+-12.4666020117882,130.842962053658,Northern Territory Library,"4 Bennett St, Parliament House, Darwin",08 8999 7177,OCLC WorldShare,https://lant.nt.gov.au/
+-35.3241714564223,149.164639259617,ACT Heritage Library,"255 Canberra Ave, Fyshwick",02 6207 5163,Civica Spydus,https://www.library.act.gov.au/find/history

@@ -36,7 +36,7 @@ function getIlsColor(f) {
           f == 'Civica Spydus' ? '#800080' :
           f == 'DECD Bookmark' ? '#e1153e' :
           f == 'Ex Libris Alma' ? '#ff6500' :
-          f == 'Ex Libris Voyager' ? 'yellow' :
+          f == 'FOLIO' ? '#0dc5ff' :
           f == 'Follett Destiny' ? '#df4917' :
           f == 'Infor V-smart' ? '#e174c1' :
           f == 'Innovative Polaris' ? '#8e7cc3' :
