@@ -8,7 +8,7 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
-html, 
+html,
 body {
   font-family: "Calibri", Arial, Tahoma, sans-serif;
   margin: 0;
@@ -120,18 +120,6 @@ nav li a:hover {
   margin: 0 1em;
 }
 
-#beta {
-  font-family: "Comic Sans", Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  font-size: 1.4em;
-  margin-left: 1em;
-  transform: rotate(-35deg);
-  background-color: #fff;
-  color: #FF3961;
-  padding: 0.25em 0.5em;
-  border-radius: 5px;
-}
-
 /* loading */
 /* ======= */
 #loading {
@@ -144,7 +132,7 @@ nav li a:hover {
   background-color: #FF3961;
 }
 
-#mapid { 
+#mapid {
   height: 75vh;
   width: 90vw;
   margin: 0 auto 5em;
@@ -213,7 +201,8 @@ footer {
 }
 
 .info-page,
-.sources {
+.sources,
+.who-else {
   max-width: 36em;
   margin: 2em auto;
 }
@@ -242,11 +231,45 @@ tbody td {
   padding: 0.5em 1em;
 }
 
+ul#libraries {
+  list-style-type: none;
+  margin-top: 2em;
+}
+
+ul#libraries li {
+  margin-top: 0.5em;
+}
+
+#form {
+  display: grid;
+  grid: auto, auto;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  margin: 2em 0;
+  padding: 2em 0;
+}
+
+#form select,
+#form button {
+  all: unset;
+  border: 2px solid #333;
+  padding: 0.5em;
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+#form button {
+  margin-top:2em;
+  border: 4px solid #FF3961;
+  text-align: center;
+}
+
 /* when below max width of para  */
 @media only screen and (max-width: 54em) {
 
   .info-page,
-  .sources {
+  .sources,
+  .who-else {
     width: 95vw;
     padding: 0 2.5vw;
   }
