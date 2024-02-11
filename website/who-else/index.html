@@ -47,13 +47,15 @@
             return {
               name: d.town,
               ils: d.ils,
+              url: d.url
             }
           });
           const academic = await d3.dsv(',', '/data/academic_library_locations.csv', (d) => {
             return {
               name: d.town,
               ils: d.ils,
-              discovery: d.discovery
+              discovery: d.discovery,
+              url: d.url
             }
             });
 
