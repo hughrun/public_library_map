@@ -99,17 +99,14 @@
 
               var libraries = []
               if (ils && !discovery) {
-                console.log("ils only")
                 libraries = data.filter( (lib) => lib.ils == ils).sort( (a,b) => {
                   return (a.name < b.name) ? -1 : (a.name > b.name) ? 1 : 0;
                 })
               } else if (discovery && !ils) {
-                console.log("discovery only")
                 libraries = data.filter( (lib) => lib.discovery == discovery).sort( (a,b) => {
                   return (a.name < b.name) ? -1 : (a.name > b.name) ? 1 : 0;
                 })
               } else {
-                console.log("both")
                 let ils_libs = data.filter( (lib) => lib.ils == ils)
                 libraries = ils_libs.filter( (lib) => lib.discovery == discovery).sort( (a,b) => {
                   return (a.name < b.name) ? -1 : (a.name > b.name) ? 1 : 0;
@@ -117,7 +114,6 @@
               }
 
               // account for no disovery listed or neither
-              console.log(libraries)
               for (let lib of libraries) {
               const li = document.createElement('li')
               if (lib.url) {
@@ -132,7 +128,6 @@
               listing.appendChild(li)
           }
           })
-
         </script>
 
         <form id="form">
