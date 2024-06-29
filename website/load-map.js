@@ -413,12 +413,12 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches, caul])
   this._div.innerHTML =
     `<p>Hover over an area for more information</p>
     <section>
-      <div><div class="circle" style="background-color: #4dac26"></div>Fine free</div>
-      <div><div class="circle" style="background-color: #b8e186"></div>Fine free (unconfirmed)</div>
-      <div><div class="circle" style="background-color: #f1b6da"></div>Fine free for children</div>
-      <div><div class="circle" style="background-color: #abd9e9"></div>Fine policy varies</div>
-      <div><div class="circle" style="background-color: #d01c8b"></div>Fines for all users</div>
-      <div><div class="circle" style="background-color: #bbb"></div>Unknown (help me find out!)</div>
+      <div><div class="circle fine-free"></div>Fine free</div>
+      <div><div class="circle fine-free-unconfirmed"></div>Fine free (unconfirmed)</div>
+      <div><div class="circle fine-free-kids"></div>Fine free for children</div>
+      <div><div class="circle fine-varies"></div>Fine policy varies</div>
+      <div><div class="circle fine-all"></div>Fines for all users</div>
+      <div><div class="circle fine-unknown"></div>Unknown (help me find out!)</div>
     </section>
     `
   };

@@ -91,23 +91,6 @@ nav li a:hover {
   border-top-right-radius: 10px;
 }
 
-@media only screen and (max-width: 800px) {
-
-  nav ul {
-    margin-left: 0;
-    padding-left: 0;
-  }
-
-  nav li {
-    display: block;
-    margin: 0;
-    padding: 0.5em 0 0.5em 1em;
-    border-color: #777;
-    border-left: none;
-    border-right: none;
-  }
-}
-
 #title {
   display: flex;
   align-items: center;
@@ -262,6 +245,49 @@ ul#libraries li {
   margin-top:2em;
   border: 4px solid #FF3961;
   text-align: center;
+}
+
+/* rules map key styles */
+
+.fine-free {
+  background-color: #4dac26
+}
+
+.fine-free-unconfirmed {
+  background-color: #b8e186
+}
+
+.fine-free-kids {
+  background-color: #f1b6da
+}
+
+.fine-varies {
+  background-color: #abd9e9
+}
+
+.fine-all {
+  background-color: #d01c8b
+}
+
+.fine-unknown {
+  background-color: #bbb
+}
+
+@media only screen and (max-width: 800px) {
+
+  nav ul {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  nav li {
+    display: block;
+    margin: 0;
+    padding: 0.5em 0 0.5em 1em;
+    border-color: #777;
+    border-left: none;
+    border-right: none;
+  }
 }
 
 /* when below max width of para  */
