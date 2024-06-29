@@ -273,6 +273,52 @@ ul#libraries li {
   background-color: #bbb
 }
 
+.two-weeks {
+  background:
+  radial-gradient(4px 4px at 6px 6px, #3a3a3a 50%, transparent 75%),
+  radial-gradient(4px 4px at 16px 6px, #3a3a3a 50%, transparent 75%),
+  radial-gradient(4px 4px at 2px 12px, #3a3a3a 50%, transparent 75%),
+  radial-gradient(4px 4px at 12px 12px, #3a3a3a 50%, transparent 75%),
+  radial-gradient(4px 4px at 20px 12px, #3a3a3a 50%, transparent 75%),
+  radial-gradient(4px 4px at 8px 18px, #3a3a3a 50%, transparent 75%);
+  background-repeat: no-repeat;
+  border: 1px solid black;
+}
+
+.three-weeks {
+  background: repeating-linear-gradient(
+    0deg,
+    #3a3a3a,
+    #3a3a3a 2px,
+    #fff 2px,
+    #3a3a3a 4px
+    )
+}
+
+.four-weeks {
+  background: repeating-linear-gradient(
+    45deg,
+    #3a3a3a,
+    #3a3a3a 3px,
+    #fff 1px,
+    #3a3a3a 4px
+    )
+}
+
+.six-weeks {
+  background: repeating-linear-gradient(
+    135deg,
+    #fff,
+    #fff 8px,
+    #3a3a3a 2px,
+    #fff 10px
+    )
+}
+
+.unknown-weeks {
+  background-color: #bbb;
+}
+
 @media only screen and (max-width: 800px) {
 
   nav ul {

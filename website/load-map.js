@@ -439,38 +439,11 @@ Promise.all([boundaries, branchesCsv, ikcCsv, mechanics, nslaBranches, caul])
   infoBoxes.loanPeriod.update = function (props) {
   this._div.innerHTML = `
   <section>
-  <div><div class="circle" style="background:
-  radial-gradient(4px 4px at 6px 6px, #3a3a3a 50%, transparent 75%),
-  radial-gradient(4px 4px at 16px 6px, #3a3a3a 50%, transparent 75%),
-  radial-gradient(4px 4px at 2px 12px, #3a3a3a 50%, transparent 75%),
-  radial-gradient(4px 4px at 12px 12px, #3a3a3a 50%, transparent 75%),
-  radial-gradient(4px 4px at 20px 12px, #3a3a3a 50%, transparent 75%),
-  radial-gradient(4px 4px at 8px 18px, #3a3a3a 50%, transparent 75%);
-  background-repeat: no-repeat;
-  border: 1px solid black;
-  "></div>2 weeks</div>
-    <div><div class="circle" style="background: repeating-linear-gradient(
-      0deg,
-      #3a3a3a,
-      #3a3a3a 2px,
-      #fff 2px,
-      #3a3a3a 4px
-      )"></div>3 weeks</div>
-    <div><div class="circle" style="background: repeating-linear-gradient(
-      45deg,
-      #3a3a3a,
-      #3a3a3a 3px,
-      #fff 1px,
-      #3a3a3a 4px
-      )"></div>4 weeks</div>
-      <div><div class="circle" style="background: repeating-linear-gradient(
-        135deg,
-        #fff,
-        #fff 8px,
-        #3a3a3a 2px,
-        #fff 10px
-        )"></div>6 weeks</div>
-    <div><div class="circle" style="background-color: #bbb"></div>Unknown (help me find out!)</div>
+    <div><div class="circle two-weeks"></div>2 weeks</div>
+    <div><div class="circle three-weeks"></div>3 weeks</div>
+    <div><div class="circle four-weeks"></div>4 weeks</div>
+    <div><div class="circle six-weeks"></div>6 weeks</div>
+    <div><div class="circle unknown-weeks"></div>Unknown (help me find out!)</div>
   </section>
   `
   };
